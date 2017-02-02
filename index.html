@@ -3,18 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive One Page website template</title>
+    <title>Smelly Socks Project</title>
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsee.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
     <link rel="stylesheet" href="owl-carousel/owl.theme.css">
     <!-- CUSTOM STYLE -->
+    <link rel="icon" href="/img/socklogo.png">
     <link rel="stylesheet" href="css/template-style.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/template-scripts.js"></script>
+
+
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Callback that creates and populates a data table,
+        // instantiates the pie chart, passes in the data and
+        // draws it.
+        function drawChart() {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Project Name');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+              ['Project A', 3],
+              ['Project B', 1],
+              ['Project C', 1],
+              ['Project D', 1],
+              ['Project E', 2]
+            ]);
+
+            // Set chart options
+            var options = {
+                'title': 'Voting Results',
+                'width': 600,
+                'height': 300
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
 </head>
 <body class="size-1140">
 
@@ -45,6 +87,7 @@
             </div>
         </div>
         <nav>
+
             <div class="line">
                 <div class="s-12 l-2">
                     <p class="logo">Smelly<strong>Socks</strong>Project</p>
@@ -64,6 +107,7 @@
         </nav>
     </header>
     <section>
+
         <!-- CAROUSEL -->
         <div id="carousel">
             <div id="owl-demo" class="owl-carousel owl-theme">
@@ -120,8 +164,8 @@
                 </div>
             </div>
         </div>
-        S
-        <!-- FIRST BLOCK -->
+
+        <!-- FIRST BLOCK/IHI INTRO -->
         <div id="first-block">
             <div class="line">
                 <h1>Ifakara Health Institute</h1>
@@ -129,14 +173,15 @@
                 <div class="s-12 m-4 l-2 center"><a class="white-btn" href="#contact">Find Out How</a></div>
             </div>
         </div>
-        <!-- Other Projects-->
+
+        <!-- ABOUT HEADER -->
         <div id="our-work">
             <div class="line">
                 <h2 class="section-title">About</h2>
             </div>
         </div>
-        <!--New line of projects-->
-        <!-- ABOUT US -->
+
+        <!-- ABOUT INFO -->
         <div id="about-us">
             <div class="s-12 m-12 l-6 media-container">
                 <img src="img/mosquito6.jpg" alt="" style="width:900px;height:611px;">
@@ -153,7 +198,8 @@
                 </div>
             </article>
         </div>
-        <!-- OUR WORK -->
+
+        <!-- RESULTS -->
         <div id="our-work">
             <div class="line">
                 <h2 class="section-title">Results</h2>
@@ -206,10 +252,11 @@
             </div>
         </div>
 
-        <!-- Other Projects-->
+        <!-- OTHER PROJECTS/VOTE A PROJ-->
         <div id="our-work" style="background-color:#6f9600;">
             <div class="line" style="color:white">
                 <h2 class="section-title" style="outline:white solid thick">Other Projects</h2>
+                <h4 style="color:white" class="text-center">We invite you to take a look at our other ongoing projects</h4>
                 <br />
 
                 <!--Row 1-->
@@ -245,36 +292,36 @@
                         <div class="s-12 m-6 l-3 margin-bottom">
                             <div class="tabs">
                                 <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
+                                    <a class="tab-label btn btn-primary">Vote this Project</a>
                                 </div>
                             </div>
                             <div class="tabs">
                                 <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
+                                    <a class="tab-label btn btn-primary">Learn More</a>
                                 </div>
                             </div>
                         </div>
                         <div class="s-12 m-6 l-3 margin-bottom">
                             <div class="tabs">
                                 <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
+                                    <a class="tab-label btn btn-primary">Vote this Project</a>
                                 </div>
                             </div>
                             <div class="tabs">
                                 <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
+                                    <a class="tab-label btn btn-primary">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="s-12 m-6 l-3 margin-bottom">
+                            <div class="tabs">
+                                <div>
+                                    <a class="tab-label btn btn-primary">Vote this Project</a>
+                                </div>
+                            </div>
+                            <div class="tabs">
+                                <div>
+                                    <a class="tab-label btn btn-primary">Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -591,20 +638,17 @@
             </div>
         </div>
 
-
-
-
-
-
-
-        <!--Vote For Sock-->
+        <!--VOTE RESULTS-->
         <div id="first-block" class="text-center" style="text-align:center;">
             <div class="line">
-                <h2 class="section-title">Vote your Favorite Sock!</h2>
+                <h2 class="section-title">See Vote Results</h2>
             </div>
             <div id="first-block">
                 <center>
-                    <form method="post" action="http://poll.pollcode.com/85928767">
+
+                    <div id="chart_div"></div>
+
+                    <!--<form method="post" action="http://poll.pollcode.com/85928767">
                         <div style="background-color:#00283a;padding:2px;width:419px;font-family:Arial;font-size:x-large;color:#ffffff;outline-style:solid;outline-color:#6f9600; outline-width:thick">
                             <div style="padding:2px 0px 4px 2px;">
                                 <strong>Vote Below</strong>
@@ -630,7 +674,7 @@
                             </div>
 
                         </div>
-                    </form>
+                    </form>-->
                 </center>
             </div>
         </div>
@@ -669,37 +713,73 @@
         <div id="latest-news">
             <div class="line text-center">
                 <h2 class="section-title">Add to the Conversation</h2>
-                <div style="background-color:#ffffff " class="fb-comments" data-href="https://hebrewhammer18.github.io/smelly-socks-proj/" data-width="600%" data-numposts="10"></div>
-                <!--<div class="margin">
-                <div class="s-12 m-6 l-6">
-                    <div class="s-12 l-2">
-                        <div class="news-date">
-                            <p class="day">28</p><p class="month">AUGUST</p><p class="year">2015</p>
+                <br />
+                <div id="first-block" style="border-radius: 25px;">
+                    <br />
+                    <h3 style="color:white">FaceBook</h3>
+                    <div id="first-block">
+                        <div class="line">
+                            <div style="background-color:#ffffff" class="fb-comments" data-href="https://colinquinn.github.io/smellysocksproject1/" data-width="750" data-numposts="10"></div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="fb-like" data-href="https://colinquinn.github.io/smellysocksproject1/" data-width="300" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
                         </div>
                     </div>
-                    <div class="s-12 l-10">
-                        <div class="news-text">
-                            <h4>First latest News</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                    <hr />
+                    <div>
+                        <div>
+                            <h3>Twitter</h3>
+                            <a class="twitter-timeline" data-width="800" data-height="900" data-theme="light" href="https://twitter.com/TwitterDev/timelines/539487832448843776">National Park Tweets - Curated tweets by TwitterDev</a>
+                            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                        <br />
+                        <div>
+                            <a class="twitter-share-button"
+                               href="https://twitter.com/intent/tweet?text=Hello%20world"
+                               data-size="large">
+                                Tweet
+                            </a>
+                            <a class="twitter-follow-button"
+                               href="https://twitter.com/TwitterDev"
+                               data-size="large"
+                               data-show-count="false">
+                                Follow @TwitterDev
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="s-12 m-6 l-6">
-                    <div class="s-12 l-2">
-                        <div class="news-date">
-                            <p class="day">12</p><p class="month">JULY</p><p class="year">2015</p>
+                    <!--<div class="margin">
+                    <div class="s-12 m-6 l-6">
+                        <div class="s-12 l-2">
+                            <div class="news-date">
+                                <p class="day">28</p><p class="month">AUGUST</p><p class="year">2015</p>
+                            </div>
+                        </div>
+                        <div class="s-12 l-10">
+                            <div class="news-text">
+                                <h4>First latest News</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="s-12 l-10">
-                        <div class="news-text">
-                            <h4>Second latest News</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                    <div class="s-12 m-6 l-6">
+                        <div class="s-12 l-2">
+                            <div class="news-date">
+                                <p class="day">12</p><p class="month">JULY</p><p class="year">2015</p>
+                            </div>
                         </div>
+                        <div class="s-12 l-10">
+                            <div class="news-text">
+                                <h4>Second latest News</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                            </div>
+                        </div>-->
+                    <!--</div>
                     </div>-->
-                <!--</div>
-                </div>-->
+                </div>
             </div>
         </div>
+
         <!-- CONTACT -->
         <div id="contact">
             <div class="line">
@@ -734,10 +814,12 @@
             </div>
         </div>
         <!-- MAP -->
+
         <div id="map-block">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1247814.3661917313!2d16.569872019090596!3d48.23131953825178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8cbf758ecb9f%3A0xddeb1d26bce5eccf!2sGallayova+2150%2F19%2C+841+02+D%C3%BAbravka!5e0!3m2!1ssk!2ssk!4v1440344568394" width="100%" height="450" frameborder="0" style="border:0"></iframe>
         </div>
     </section>
+
     <!-- FOOTER -->
     <footer>
         <div class="line">
@@ -749,6 +831,7 @@
             </div>
         </div>
     </footer>
+
     <script type="text/javascript" src="js/responsee.js"></script>
     <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
     <script type="text/javascript">
