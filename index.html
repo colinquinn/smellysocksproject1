@@ -17,472 +17,132 @@
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/template-scripts.js"></script>
 
-
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-
-        // Load the Visualization API and the corechart package.
-        google.charts.load('current', { 'packages': ['corechart'] });
-
-        // Set a callback to run when the Google Visualization API is loaded.
-        google.charts.setOnLoadCallback(drawChart);
-
-        // Callback that creates and populates a data table,
-        // instantiates the pie chart, passes in the data and
-        // draws it.
-        function drawChart() {
-
-            // Create the data table.
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Project Name');
-            data.addColumn('number', 'Slices');
-            data.addRows([
-              ['Project A', 3],
-              ['Project B', 1],
-              ['Project C', 1],
-              ['Project D', 1],
-              ['Project E', 2]
-            ]);
-
-            // Set chart options
-            var options = {
-                'title': 'Voting Results',
-                'width': 600,
-                'height': 300
-            };
-
-            // Instantiate and draw our chart, passing in some options.
-            var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-            chart.draw(data, options);
+    <!---------------------------------------------------------------------------->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .bs-example {
+            margin: 20px;
         }
+
+        .modal-content iframe {
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /* Get iframe src attribute value i.e. YouTube video url
+            and store it in a variable */
+            var url = $("#cartoonVideo").attr('src');
+
+            /* Assign empty url value to the iframe src attribute when
+            modal hide, which stop the video playing */
+            $("#myModal").on('hide.bs.modal', function () {
+                $("#cartoonVideo").attr('src', '');
+            });
+
+            /* Assign the initially stored url back to the iframe src
+            attribute when modal is displayed again */
+            $("#myModal").on('show.bs.modal', function () {
+                $("#cartoonVideo").attr('src', url);
+            });
+        });
     </script>
-
-    <!--Script for Vue.js-->
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-
 </head>
 <body class="size-1140">
 
-    <!--JavaScript SDK for FaceBook-->
-    <div id="fb-root"></div>
-    <script>
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-
-
-    <!-- TOP NAV WITH LOGO -->
-    <header>
-        <div id="topbar">
-            <div class="line">
-                <div class="s-12 m-6 l-6">
-                    <p>CONTACT US: <strong>0800 200 200</strong> | <strong>example@ihi.or.tz</strong></p>
-                </div>
-                <div class="s-12 m-6 l-6">
-                    <div class="social right">
-                        <a href="https://www.facebook.com/Ifakara-Health-Institute-1283652051698612/"><i class="icon-facebook_circle"></i></a> <a href="https://twitter.com/ifakarahealth"><i class="icon-twitter_circle"></i></a> <a href="https://www.youtube.com/channel/UCcHPSsPbn7BpEjjMu2QR-cQ"><i class="icon-sli-social-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <nav>
-
-            <div class="line">
-                <div class="s-12 l-2">
-                    <p class="logo">Smelly<strong>Socks</strong>Project</p>
-                </div>
-                <div class="top-nav s-12 l-10">
-                    <p class="nav-text">Custom menu text</p>
-                    <ul class="right">
-                        <li class="active-item"><a href="#carousel">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#results">Race Results</a></li>
-                        <li><a href="#projects">Other Projects</a></li>
-                        <li><a href="#services">Donate</a></li>
-                        <!--<li><a href="#conversation">Join The Conversation </a></li>-->
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <section>
-
-        <!-- CAROUSEL -->
-        <div id="carousel">
-            <div id="owl-demo" class="owl-carousel owl-theme">
-                <div class="item">
-                    <img class="img-responsive" src="img/mosquito4.jpg" alt="" style="width:1600px;height:800px;">
-                    <div class="line text-center">
-                        <div class="text hide-s">
-                            <div class="line">
-                                <div class="prev-arrow hide-s hide-m">
-                                    <i class="icon-chevron_left"></i>
-                                </div>
-                                <div class="next-arrow hide-s hide-m">
-                                    <i class="icon-chevron_right"></i>
-                                </div>
-                            </div>
-                            <h2>Connecting Yesterday's Smelly Socks with Malaria Research</h2>
-                            <p><a href="#about"><u>See how These Unique Experiments are Conducted</u></a></p>
-                            <br />
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label btn btn-primary" style="padding: 15px 50px">Make a Donation</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label btn btn-primary" style="padding: 15px 50px">Make a Donation With Socks</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="img/mosquito2.jpg" alt="" style="width:1600px;height:800px;">
-                    <div class="line text-center">
-                        <div class="text hide-s">
-                            <div class="line">
-                                <div class="prev-arrow hide-s hide-m">
-                                    <i class="icon-chevron_left"></i>
-                                </div>
-                                <div class="next-arrow hide-s hide-m">
-                                    <i class="icon-chevron_right"></i>
-                                </div>
-                            </div>
-                            <h2>See the First Ever Mosquito Race Course</h2>
-                            <p><a href="#results"><u>Watch Mosquitos Race Towards the Smellier Sock</u></a></p>
-                            <br />
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label btn btn-primary" style="padding: 15px 50px">Make a Donation</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label btn btn-primary" style="padding: 15px 50px">Make a Donation With Socks</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="img/mosquito3.jpg" alt="" style="width:1600px;height:800px;">
-                    <div class="line text-center">
-                        <div class="text hide-s">
-                            <div class="line">
-                                <div class="prev-arrow hide-s hide-m">
-                                    <i class="icon-chevron_left"></i>
-                                </div>
-                                <div class="next-arrow hide-s hide-m">
-                                    <i class="icon-chevron_right"></i>
-                                </div>
-                            </div>
-                            <h2>Donate Today to See How Your Socks Stack Up</h2>
-                            <p><a href="#services"><u>Contribute to Raising Malaria Awareness</u></a></p>
-                            <br />
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label btn btn-primary" style="padding: 15px 50px">Make a Donation</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label btn btn-primary" style="padding: 15px 50px">Make a Donation With Socks</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- FIRST BLOCK/IHI INTRO -->
-        <div id="first-block">
-            <div class="line">
-                <h1>Ifakara Health Institute</h1>
-                <h5 style="color:white">See how the scientists at the Ifakara Health Institute are using your donated socks to find answers behind what attracts mosquitos to humans.</h5>
-                <div class="s-12 m-4 l-2 center"><a class="white-btn" href="#about">Find Out How</a></div>
-            </div>
-        </div>
-
-        <!-- ABOUT HEADER -->
-        <div id="about">
-            <div id="our-work">
-                <div class="line">
-                    <h2 class="section-title">About</h2>
-                </div>
-            </div>
-        </div>
-
-        <!-- ABOUT INFO -->
-        <div id="about-us">
-            <div class="s-12 m-12 l-6 media-container">
-                <img src="img/mosquito6.jpg" alt="" style="width:900px;height:611px;">
-            </div>
-            <article class="s-12 m-12 l-6">
-                <h2>Explore The<br> <strong></strong>Smelly Socks Project</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
-                    lobortis nisl ut aliquip ex ea commodo consequat.
-                </p>
-                <div class="about-us-icons">
-                    <i class="icon-paperplane_ico"></i> <i class="icon-trophy"></i> <i class="icon-clock"></i>
-                </div>
-            </article>
-        </div>
-
-        <!-- RESULTS -->
-        <div id="results"></div>
-        <div id="our-work">
-            <div class="line">
-                <h2 class="section-title">Results</h2>
-                <div class="tabs">
-                    <div class="tab-item tab-active">
-                        <a class="tab-label active-btn">Race Videos</a>
-                        <br />
-                        <div id="first-block" style="border-radius: 25px;">
-                            <br />
-                            <div class="tab-content">
-                                <div class="margin">
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito7.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito2.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito1.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito3.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-item">
-                        <a class="tab-label">Current Champions</a>
-                        <br />
-                        <div id="first-block" style="border-radius: 25px;">
-                            <br />
-                            <div class="tab-content">
-                                <div class="margin">
-                                    hey
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-item">
-                        <a class="tab-label">Data Library</a>
-                        <br />
-                        <div id="first-block" style="border-radius: 25px;">
-                            <br />
-                            <div class="tab-content">
-                                <div class="margin">
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito7.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito2.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito1.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito3.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-item">
-                        <a class="tab-label">Break Down</a>
-                        <br />
-                        <div id="first-block" style="border-radius: 25px;">
-                            <br />
-                            <div class="tab-content">
-                                <div class="margin">
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito7.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito2.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito1.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito3.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- OTHER PROJECTS/VOTE A PROJ-->
-        <div id="projects"></div>
-        <div id="our-work" style="background-color:#6f9600;">
-            <div class="line" style="color:white">
-                <h2 class="section-title" style="outline:white solid thick">Other Projects</h2>
-                <h4 style="color:white" class="text-center">We invite you to take a look at our other ongoing projects</h4>
-                <br />
-
-                <!--Row 1-->
-                <div class="margin text-center" style="outline:white solid thick; color:white">
+    <!-- RESULTS -->
+    <div id="results"></div>
+    <div id="our-work">
+        <div class="line">
+            <h2 class="section-title">Results</h2>
+            <div class="tabs">
+                <div class="tab-item tab-active">
+                    <a class="tab-label active-btn">Race Videos</a>
                     <br />
-                    <br />
-                    <br />
-                    <br />
-                </div>
-            </div>
-        </div>
-
-        <!--VOTE RESULTS-->
-        <div id="first-block" class="text-center" style="text-align:center;">
-            <div class="line">
-                <h2 class="section-title">See Leading Projects</h2>
-            </div>
-            <div id="first-block">
-                <center>
-                    <div id="chart_div"></div>
-                </center>
-            </div>
-        </div>
-
-        <!-- Donate -->
-        <div id="services">
-            <div class="line">
-                <h2 class="section-title">Donate</h2>
-                <div class="margin">
-                    <div class="s-12 m-6 l-4 margin-bottom">
-                        <i class="icon-vector"></i>
-                        <div class="service-text">
-                            <h3>Give to Malaria Research</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                        </div>
-                    </div>
-                    <div class="s-12 m-6 l-4 margin-bottom">
-                        <i class="icon-eye"></i>
-                        <div class="service-text">
-                            <h3>Donate your smelly socks</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                        </div>
-                    </div>
-                    <div class="s-12 m-12 l-4 margin-bottom">
-                        <i class="icon-random"></i>
-                        <div class="service-text">
-                            <h3>Something else</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <!--Add to Conversation-->
-        <div id="conversation"></div>
-        <div id="latest-news">
-            <div class="line text-center">
-                <h2 class="section-title">Add to the Conversation</h2>
-                <br />
-                <div id="first-block" style="border-radius: 25px;">
-                    <br />
-                    <!--<h3 style="color:white">FaceBook</h3>
-                    <div id="first-block">
-                        <div class="line">
-                            <div style="background-color:#ffffff" class="fb-comments" data-href="https://colinquinn.github.io/smellysocksproject1/" data-width="750" data-numposts="10"></div>
-                        </div>
+                    <div id="first-block" style="border-radius: 25px;">
                         <br />
-                        <div class="row">
-                            <div class="fb-like" data-href="https://colinquinn.github.io/smellysocksproject1/" data-width="300" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                        <div class="tab-content">
+                            <div class="margin">
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom" href="#myModal" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito7.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom" href="#myModal" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito2.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom" href="#myModal" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito1.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom" href="#myModal" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito3.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                            </div>
                         </div>
                     </div>
-                    <hr />
-                    <div>
-                        <div>
-                            <h3>Twitter</h3>
-                            <a class="twitter-timeline" data-width="800" data-height="900" data-theme="light" href="https://twitter.com/TwitterDev/timelines/539487832448843776">National Park Tweets - Curated tweets by TwitterDev</a>
-                            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        </div>
+                </div>
+                <div class="tab-item">
+                    <a class="tab-label">Current Champions</a>
+                    <br />
+                    <div id="first-block" style="border-radius: 25px;">
                         <br />
-                        <div>
-                            <a class="twitter-share-button"
-                               href="https://twitter.com/intent/tweet?text=Hello%20world"
-                               data-size="large">
-                                Tweet
-                            </a>
-                            <a class="twitter-follow-button"
-                               href="https://twitter.com/TwitterDev"
-                               data-size="large"
-                               data-show-count="false">
-                                Follow @TwitterDev
-                            </a>
+                        <div class="tab-content">
+                            <div class="margin">
+                                hey
+                            </div>
                         </div>
-                    </div>-->
-                </div>
-            </div>
-        </div>
-
-        <!--Calender thing-->
-        <div class="margin">
-            <div class="s-12 m-6 l-6">
-                <div class="s-12 l-2">
-                    <div class="news-date">
-                        <p class="day">28</p><p class="month">AUGUST</p><p class="year">2015</p>
                     </div>
                 </div>
-                <div class="s-12 l-10">
-                    <div class="news-text">
-                        <h4>First latest News</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="s-12 m-6 l-6">
-                <div class="s-12 l-2">
-                    <div class="news-date">
-                        <p class="day">12</p><p class="month">JULY</p><p class="year">2015</p>
-                    </div>
-                </div>
-                <div class="s-12 l-10">
-                    <div class="news-text">
-                        <h4>Second latest News</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- CONTACT -->
-        <div id="contact">
-            <div class="line">
-                <h2 class="section-title">Contact Us</h2>
-                <div class="margin">
-                    <div class="s-12 m-12 l-3 hide-m hide-s margin-bottom right-align">
-                        <img src="img/logo.png" alt="" style="border:1px solid black;" />
-                    </div>
-                    <div class="s-12 m-12 l-4 margin-bottom right-align">
-                        <h3>Ifakara Health Institute</h3>
-                        <address>
-                            <p><strong>Adress:</strong> Off Mlabani Passage, PO Box 53, Ifakara</p>
-                            <p><strong>Country:</strong>Tanzanaia</p>
-                            <p><strong>E-mail:</strong> example@ihi.or.tz</p>
-                        </address>
+                <div class="tab-item">
+                    <a class="tab-label">Data Library</a>
+                    <br />
+                    <div id="first-block" style="border-radius: 25px;">
                         <br />
-                        <h3>Social</h3>
-                        <p><i class="icon-facebook icon"></i> <a href="https://www.facebook.com/pages/Vision-Design-graphic-ZOO/154664684553091">Find Us on FaceBook</a></p>
-                        <p class="margin-bottom"><i class="icon-twitter icon"></i> <a href="https://twitter.com/MyResponsee">Find Us on Twitter</a></p>
+                        <div class="tab-content">
+                            <div class="margin">
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito7.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito2.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito1.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito3.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="s-12 m-12 l-5">
-                        <h3>Example contact form (do not use)</h3>
-                        <form class="customform" action="">
-                            <div class="s-12"><input name="" placeholder="Your e-mail" title="Your e-mail" type="text" /></div>
-                            <div class="s-12"><input name="" placeholder="Your name" title="Your name" type="text" /></div>
-                            <div class="s-12"><textarea placeholder="Your message" name="" rows="5"></textarea></div>
-                            <div class="s-12 m-12 l-4"><button class="color-btn" type="submit">Submit Button</button></div>
-                        </form>
+                </div>
+                <div class="tab-item">
+                    <a class="tab-label">Break Down</a>
+                    <br />
+                    <div id="first-block" style="border-radius: 25px;">
+                        <br />
+                        <div class="tab-content">
+                            <div class="margin">
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito7.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito2.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito1.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito3.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- MAP -->
+    </div>
 
-        <div id="map-block">
 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d22341.74826251386!2d36.68645839521739!3d-8.152229463917232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2stz!4v1486039885969" width="100%" height="450" frameborder="0" style="border:0"></iframe>
+    <div class="bs-example">
+        <!-- Modal HTML -->
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">YouTube Video</h4>
+                    </div>
+                    <div class="modal-body">
+                        <iframe id="cartoonVideo" width="560" height="315" src="//www.youtube.com/embed/YE7VzlLtp-4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+
+
+
+
+
 
     <!-- FOOTER -->
     <footer>
