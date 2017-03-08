@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
     <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+
     <!-- CUSTOM STYLE -->
     <link rel="icon" href="/img/socklogo.png">
     <link rel="stylesheet" href="css/template-style.css">
     <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
-    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>-->
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/template-scripts.js"></script>
 
@@ -58,23 +59,42 @@
         }
     </script>
 
-    <!--Script for Vue.js-->
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .bs-example {
+            margin: 20px;
+        }
+
+        .modal-content iframe {
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /* Get iframe src attribute value i.e. YouTube video url
+            and store it in a variable */
+            var url = $("#cartoonVideo").attr('src');
+
+            /* Assign empty url value to the iframe src attribute when
+            modal hide, which stop the video playing */
+            $("#myModal").on('hide.bs.modal', function () {
+                $("#cartoonVideo").attr('src', '');
+            });
+
+            /* Assign the initially stored url back to the iframe src
+            attribute when modal is displayed again */
+            $("#myModal").on('show.bs.modal', function () {
+                $("#cartoonVideo").attr('src', url);
+            });
+        });
+    </script>
 
 </head>
 <body class="size-1140">
-
-    <!--JavaScript SDK for FaceBook-->
-    <div id="fb-root"></div>
-    <script>
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-
 
     <!-- TOP NAV WITH LOGO -->
     <header>
@@ -104,7 +124,6 @@
                         <li><a href="#results">Race Results</a></li>
                         <li><a href="#projects">Other Projects</a></li>
                         <li><a href="#services">Donate</a></li>
-                        <!--<li><a href="#conversation">Join The Conversation </a></li>-->
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -204,7 +223,7 @@
         </div>
 
         <!-- FIRST BLOCK/IHI INTRO -->
-        <div id="first-block">
+        <div id="first-block" style="background-color:#012232">
             <div class="line">
                 <h1>Ifakara Health Institute</h1>
                 <h5 style="color:white">See how the scientists at the Ifakara Health Institute are using your donated socks to find answers behind what attracts mosquitos to humans.</h5>
@@ -252,10 +271,10 @@
                             <br />
                             <div class="tab-content">
                                 <div class="margin">
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito7.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito2.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito1.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito3.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom" href="#myModal" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito7.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom" href="#myModal" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito2.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom" href="#myModal" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito1.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom" href="#myModal" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito3.jpg" alt="" style="width:420px;height:300px;"></a></div>
                                 </div>
                             </div>
                         </div>
@@ -300,6 +319,23 @@
                                     <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text" style="background-color:#92c500"><h4>Lorem Ipsum Dolor</h4><p style="color:#000000">Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito3.jpg" alt="" style="width:420px;height:300px;"></a></div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bs-example">
+            <!-- Modal HTML -->
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">YouTube Video</h4>
+                        </div>
+                        <div class="modal-body">
+                            <iframe id="cartoonVideo" width="560" height="315" src="//www.youtube.com/embed/YE7VzlLtp-4" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
