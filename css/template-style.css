@@ -433,7 +433,7 @@ a.tab-label, a.tab-label:link, a.tab-label:visited {
     }
 
 #services {
-    background: #6f9600 none repeat scroll 0 0;
+    background: #012232 none repeat scroll 0 0;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     padding: 6em 2em;
 }
@@ -660,3 +660,32 @@ footer {
     background-color: #6f9600;
     border-radius: 50%;
 }
+
+.donate {
+    color: #00283a;
+    border-radius: 25px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.racerNames {
+    text-align: center;
+    color: white;
+    font-size: medium;
+}
+
+.my-btn {
+    color: #fff;
+    background-color: #00283a;
+    border: solid #2b669a;
+}
+
+    .my-btn:hover {
+        transition: all 0.20s linear 0s;
+        -o-transition: all 0.20s linear 0s;
+        -ms-transition: all 0.20s linear 0s;
+        -moz-transition: all 0.20s linear 0s;
+        -webkit-transition: all 0.20s linear 0s;
+        background-color: #6f9600;
+        color: #fff;
+    }

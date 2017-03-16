@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
 
-    <!-- Blue: #012232
+    <!-- Blue: #00283a
         Green: #6f9600 -->
 
 
@@ -26,9 +26,10 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 
+
     <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
+    <!--<script type="text/javascript">
 
         // Load the Visualization API and the corechart package.
         google.charts.load('current', { 'packages': ['corechart'] });
@@ -43,28 +44,28 @@
 
             // Create the data table.
             var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Project Name');
-            data.addColumn('number', 'Slices');
+            data.addColumn('string', 'Racer Name');
+            data.addColumn('number', '% Attractivness');
             data.addRows([
-              ['Bill Gates', 3],
-              ['John Doe', 1],
-              ['Aaron Rodgers', 1],
-              ['Steve Jobs', 1],
-              ['Mike Dolan', 2]
+              ['Bill Gates', 87],
+              ['John Doe', 84],
+              ['Aaron Rodgers', 83],
+              ['Steve Jobs', 80],
+              ['Mike Dolan', 75]
             ]);
 
             // Set chart options
             var options = {
-                'title': 'Voting Results',
-                'width': 600,
-                'height': 300
+                'title': 'Race Results',
+                'width': 900,
+                'height': 400
             };
 
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
             chart.draw(data, options);
         }
-    </script>
+    </script>-->
 
 
 </head>
@@ -75,7 +76,7 @@
         <div id="topbar">
             <div class="line">
                 <div class="s-12 m-6 l-6">
-                    <p>CONTACT US: <strong>0800 200 200</strong> | <strong>example@ihi.or.tz</strong></p>
+                    <p>CONTACT US: <strong>+255 232 625 164</strong> | <strong>example@ihi.or.tz</strong></p>
                 </div>
                 <div class="s-12 m-6 l-6">
                     <div class="social right">
@@ -96,7 +97,7 @@
                         <li class="active-item"><a href="#carousel">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#results">Race Results</a></li>
-                        <li><a href="#projects">Other Projects</a></li>
+                        <!--<li><a href="#projects">Other Projects</a></li>-->
                         <li><a href="#services">Donate</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -110,7 +111,7 @@
         <div id="carousel">
             <div id="owl-demo" class="owl-carousel owl-theme">
                 <div class="item">
-                    <img class="img-responsive" src="img/mosquito4.jpg" alt="" style="width:1600px;height:800px;">
+                    <img class="img-responsive" src="img/scientist_machine.JPG" alt="" style="width:inherit;height:inherit;">
                     <div class="line text-center">
                         <div class="text hide-s">
                             <div class="line">
@@ -126,12 +127,13 @@
                             <br />
                             <div class="tabs">
                                 <div>
-                                    <a class="tab-label btn btn-primary" style="padding: 15px 50px">Make a Donation</a>
+                                    <a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation</a>
                                 </div>
                             </div>
                             <div class="tabs">
                                 <div>
-                                    <a class="tab-label btn btn-primary" style="padding: 15px 50px">Make a Donation With Socks</a>
+                                    <a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation With Socks</a>
+                                    <br /><br /><br /><br /><br /><br /><br />
                                 </div>
                             </div>
                         </div>
@@ -154,12 +156,12 @@
                             <br />
                             <div class="tabs">
                                 <div>
-                                    <a class="tab-label btn btn-primary" style="padding: 15px 50px">Make a Donation</a>
+                                    <a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation</a>
                                 </div>
                             </div>
                             <div class="tabs">
                                 <div>
-                                    <a class="tab-label btn btn-primary" style="padding: 15px 50px">Make a Donation With Socks</a>
+                                    <a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation With Socks</a>
                                 </div>
                             </div>
                         </div>
@@ -182,12 +184,12 @@
                             <br />
                             <div class="tabs">
                                 <div>
-                                    <a class="tab-label btn btn-primary" style="padding: 15px 50px">Make a Donation</a>
+                                    <a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation</a>
                                 </div>
                             </div>
                             <div class="tabs">
                                 <div>
-                                    <a class="tab-label btn btn-primary" style="padding: 15px 50px">Make a Donation With Socks</a>
+                                    <a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation With Socks</a>
                                 </div>
                             </div>
                         </div>
@@ -217,7 +219,7 @@
         <!-- ABOUT INFO -->
         <div id="about-us">
             <div class="s-12 m-12 l-6 media-container">
-                <img src="img/mosquito6.jpg" alt="" style="width:900px;height:611px;">
+                <img src="img/machine4.jpg" class="img-responsive" alt="" style="width:inherit;height:inherit;">
             </div>
             <article class="s-12 m-12 l-6">
                 <h2>Explore The<br> <strong></strong>Smelly Socks Project</h2>
@@ -245,10 +247,10 @@
                             <br />
                             <div class="tab-content">
                                 <div class="margin">
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom" href="#video1" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito7.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom" href="#video1" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito2.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom" href="#video1" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito1.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                    <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom" href="#video1" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito3.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                    <div class="s-12 m-6 l-3 racerNames"><h4>Bill Gates VS Clint Dempsey</h4><a class="our-work-container lightbox margin-bottom" href="#video1" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito7.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                    <div class="s-12 m-6 l-3 racerNames"><h4>Bill Gates VS Clint Dempsey</h4><a class="our-work-container lightbox margin-bottom" href="#video1" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito2.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                    <div class="s-12 m-6 l-3 racerNames"><h4>Bill Gates VS Clint Dempsey</h4><a class="our-work-container lightbox margin-bottom" href="#video1" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito1.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                    <div class="s-12 m-6 l-3 racerNames"><h4>Bill Gates VS Clint Dempsey</h4><a class="our-work-container lightbox margin-bottom" href="#video1" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito3.jpg" alt="" style="width:420px;height:300px;"></a></div>
                                 </div>
                             </div>
                         </div>
@@ -274,6 +276,53 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="text-center" style="color:white"><h3>Runners Up</h3></div>
+                                <div class="table-responsive" style="background-color: #FFF">
+                                    <table>
+                                        <tr>
+                                            <th>Standing</th>
+                                            <th>Name</th>
+                                            <th>Attractivness</th>
+                                            <th>Country</th>
+                                        </tr>
+                                        <tr>
+                                            <td>2nd Place</td>
+                                            <td>Maria Anders</td>
+                                            <td>85%</td>
+                                            <td>Germany</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3rd Place</td>
+                                            <td>Francisco Chang</td>
+                                            <td>84%</td>
+                                            <td>Mexico</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4th Place</td>
+                                            <td>Roland Mendel</td>
+                                            <td>82%</td>
+                                            <td>USA</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5th Place</td>
+                                            <td>Helen Bennett</td>
+                                            <td>76%</td>
+                                            <td>Ireland</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6th Place</td>
+                                            <td>Yoshi Tannamuri</td>
+                                            <td>76%</td>
+                                            <td>Australia</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7th Place</td>
+                                            <td>Giovanni Rovelli</td>
+                                            <td>71%</td>
+                                            <td>Tanzanaia</td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -285,7 +334,7 @@
                             <div class="tab-content">
                                 <div class="margin">
                                     <center>
-                                        <div id="chart_div"></div>
+                                        <div class="image-responsive" id="chart_div"></div>
                                     </center>
                                 </div>
                             </div>
@@ -307,132 +356,100 @@
             </div>
         </div>
 
-        <div class="videoPlayer">
-            <!-- Modal HTML -->
-            <div id="video1" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4 class="modal-title">Bill Gates VS Clint Dempsey</h4>
-                        </div>
-                        <div class="modal-body">
-                            <iframe id="raceVideo" width="560" height="315" src="//www.youtube.com/embed/rD8SmacBUcU" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- OTHER PROJECTS/VOTE A PROJ-->
-        <div id="projects"></div>
-        <div id="our-work" style="background-color:#6f9600;">
-            <div class="line" style="color:white">
-                <h2 class="section-title" style="outline:white solid thick">Other Projects</h2>
-                <h4 style="color:white" class="text-center">We invite you to take a look at our other ongoing projects</h4>
-                <br />
-
-                <!--Row 1-->
-                <div class="margin text-center" style="outline:white solid thick; color:white">
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                </div>
-            </div>
-        </div>
-
-        <!--VOTE RESULTS-->
-        <div id="first-block" class="text-center" style="text-align:center;">
-            <div class="line">
-                <h2 class="section-title">See Leading Projects</h2>
-            </div>
-            <div id="first-block">
-                <center>
-                    <div id="chart_div"></div>
-                </center>
-            </div>
-        </div>
-
         <!-- Donate -->
         <div id="services">
+            <h2 class="section-title">Donate</h2>
+            <div class="donate">
+                <br />
+                <h2 style="color:#00283a"><strong>Instructions for Donating Socks</strong></h2>
+                <h3 style="color:#00283a">United States:</h3>
+                <p style="color:#00283a">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                <h3 style="color:#00283a">Tanzania:</h3>
+                <p style="color:#00283a">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                <h3 style="color:#00283a">Europe:</h3>
+                <p style="color:#00283a">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                <br /> <br />
+            </div>
+
+            <br /> <br /> <br /> <br />
             <div class="line">
-                <h2 class="section-title">Donate</h2>
                 <div class="margin">
                     <div class="s-12 m-6 l-4 margin-bottom">
-                        <i class="icon-vector"></i>
+                        <i class="icon-sli-phone"></i>
                         <div class="service-text">
-                            <h3>Give to Malaria Research</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            <h3>Donate VIA Mobile Money</h3>
+                            <p>
+                                Send your donation to<br />
+                                AIRTEL MONEY :- 078928XXXX <br />
+                                TIGO PESA :- 065911XXXX<br />
+                                M-PESA :- 075889XXXX
+                            </p>
                         </div>
                     </div>
                     <div class="s-12 m-6 l-4 margin-bottom">
-                        <i class="icon-eye"></i>
-                        <div class="service-text">
-                            <h3>Donate your smelly socks</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                        </div>
+                        <img src="img/donate.jpg" alt="Image not avaiable" />
+                        <!--https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/donate_step_1/-->
                     </div>
                     <div class="s-12 m-12 l-4 margin-bottom">
                         <i class="icon-random"></i>
                         <div class="service-text">
-                            <h3>Something else</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            <h3>Donate to Project as a Whole</h3>
+                            <p>Please follow this <a href="http://ihi.or.tz/support-us/">link </a>to Ifakara Health Insitiute's donation page </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
 
 
 
         <!--Add to Conversation-->
-        <div id="conversation"></div>
+        <!--<div id="conversation"></div>
         <div id="latest-news">
             <div class="line text-center">
                 <h2 class="section-title">Add to the Conversation</h2>
                 <br />
                 <div id="first-block" style="border-radius: 25px;">
-                    <br />
-                    <!--<h3 style="color:white">FaceBook</h3>
-                    <div id="first-block">
-                        <div class="line">
-                            <div style="background-color:#ffffff" class="fb-comments" data-href="https://colinquinn.github.io/smellysocksproject1/" data-width="750" data-numposts="10"></div>
-                        </div>
-                        <br />
-                        <div class="row">
-                            <div class="fb-like" data-href="https://colinquinn.github.io/smellysocksproject1/" data-width="300" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
-                        </div>
-                    </div>
-                    <hr />
-                    <div>
-                        <div>
-                            <h3>Twitter</h3>
-                            <a class="twitter-timeline" data-width="800" data-height="900" data-theme="light" href="https://twitter.com/TwitterDev/timelines/539487832448843776">National Park Tweets - Curated tweets by TwitterDev</a>
-                            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        </div>
-                        <br />
-                        <div>
-                            <a class="twitter-share-button"
-                               href="https://twitter.com/intent/tweet?text=Hello%20world"
-                               data-size="large">
-                                Tweet
-                            </a>
-                            <a class="twitter-follow-button"
-                               href="https://twitter.com/TwitterDev"
-                               data-size="large"
-                               data-show-count="false">
-                                Follow @TwitterDev
-                            </a>
-                        </div>
-                    </div>-->
-                </div>
+                    <br />-->
+        <!--<h3 style="color:white">FaceBook</h3>
+        <div id="first-block">
+            <div class="line">
+                <div style="background-color:#ffffff" class="fb-comments" data-href="https://colinquinn.github.io/smellysocksproject1/" data-width="750" data-numposts="10"></div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="fb-like" data-href="https://colinquinn.github.io/smellysocksproject1/" data-width="300" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
             </div>
         </div>
-
+        <hr />
+        <div>
+            <div>
+                <h3>Twitter</h3>
+                <a class="twitter-timeline" data-width="800" data-height="900" data-theme="light" href="https://twitter.com/TwitterDev/timelines/539487832448843776">National Park Tweets - Curated tweets by TwitterDev</a>
+                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <br />
+            <div>
+                <a class="twitter-share-button"
+                   href="https://twitter.com/intent/tweet?text=Hello%20world"
+                   data-size="large">
+                    Tweet
+                </a>
+                <a class="twitter-follow-button"
+                   href="https://twitter.com/TwitterDev"
+                   data-size="large"
+                   data-show-count="false">
+                    Follow @TwitterDev
+                </a>
+            </div>
+        </div>-->
+        <!--</div>
+            </div>
+        </div>-->
         <!--Calender thing-->
-        <div class="margin">
+        <!--<div class="margin">
             <div class="s-12 m-6 l-6">
                 <div class="s-12 l-2">
                     <div class="news-date">
@@ -459,9 +476,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-
+        </div>-->
         <!-- CONTACT -->
         <div id="contact">
             <div class="line">
@@ -501,6 +516,24 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d22341.74826251386!2d36.68645839521739!3d-8.152229463917232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2stz!4v1486039885969" width="100%" height="450" frameborder="0" style="border:0"></iframe>
         </div>
     </section>
+
+    <div class="videoPlayer">
+        <!-- Modal HTML -->
+        <div id="video1" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Bill Gates VS Clint Dempsey</h4>
+                    </div>
+                    <div class="modal-body">
+                        <iframe id="raceVideo" width="560" height="315" src="//www.youtube.com/embed/rD8SmacBUcU" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- FOOTER -->
     <footer>
