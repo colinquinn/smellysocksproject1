@@ -1,6 +1,11 @@
 ﻿<!DOCTYPE html>
 <html lang="en-US">
 <head>
+
+    <!-- Blue: #00283a
+        Green: #6f9600 -->
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smelly Socks Project</title>
@@ -9,18 +14,22 @@
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
     <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
     <!-- CUSTOM STYLE -->
     <link rel="icon" href="/img/socklogo.png">
     <link rel="stylesheet" href="css/template-style.css">
-    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
-    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/template-scripts.js"></script>
 
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
 
     <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
+    <!--<script type="text/javascript">
 
         // Load the Visualization API and the corechart package.
         google.charts.load('current', { 'packages': ['corechart'] });
@@ -35,53 +44,43 @@
 
             // Create the data table.
             var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Project Name');
-            data.addColumn('number', 'Slices');
+            data.addColumn('string', 'Racer Name');
+            data.addColumn('number', '% Attractivness');
             data.addRows([
-              ['Project A', 3],
-              ['Project B', 1],
-              ['Project C', 1],
-              ['Project D', 1],
-              ['Project E', 2]
+              ['Bill Gates', 87],
+              ['John Doe', 84],
+              ['Aaron Rodgers', 83],
+              ['Steve Jobs', 80],
+              ['Mike Dolan', 75]
             ]);
 
             // Set chart options
             var options = {
-                'title': 'Voting Results',
-                'width': 600,
-                'height': 300
+                'title': 'Race Results',
+                'width': 900,
+                'height': 400
             };
 
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
             chart.draw(data, options);
         }
-    </script>
+    </script>-->
+
+
 </head>
 <body class="size-1140">
-
-    <!--JavaScript SDK for FaceBook-->
-    <div id="fb-root"></div>
-    <script>
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-
 
     <!-- TOP NAV WITH LOGO -->
     <header>
         <div id="topbar">
             <div class="line">
                 <div class="s-12 m-6 l-6">
-                    <p>CONTACT US: <strong>0800 200 200</strong> | <strong>example@ihi.or.tz</strong></p>
+                    <p>CONTACT US: <strong>+255 232 625 164</strong> | <strong>example@ihi.or.tz</strong></p>
                 </div>
                 <div class="s-12 m-6 l-6">
                     <div class="social right">
-                        <a><i class="icon-facebook_circle"></i></a> <a><i class="icon-twitter_circle"></i></a> <a><i class="icon-google_plus_circle"></i></a> <a><i class="icon-instagram_circle"></i></a>
+                        <a href="https://www.facebook.com/Ifakara-Health-Institute-1283652051698612/"><i class="icon-facebook_circle"></i></a> <a href="https://twitter.com/ifakarahealth"><i class="icon-twitter_circle"></i></a> <a href="https://www.youtube.com/channel/UCcHPSsPbn7BpEjjMu2QR-cQ"><i class="icon-sli-social-youtube"></i></a>
                     </div>
                 </div>
             </div>
@@ -98,9 +97,8 @@
                         <li class="active-item"><a href="#carousel">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#results">Race Results</a></li>
-                        <li><a href="#projects">Other Projects</a></li>
+                        <!--<li><a href="#projects">Other Projects</a></li>-->
                         <li><a href="#services">Donate</a></li>
-                        <!--<li><a href="#conversation">Join The Conversation </a></li>-->
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -113,8 +111,8 @@
         <div id="carousel">
             <div id="owl-demo" class="owl-carousel owl-theme">
                 <div class="item">
-                    <img src="img/mosquito4.jpg" alt="" style="width:1600px;height:800px;">
-                    <div class="line">
+                    <img class="img-responsive" src="img/scientist_machine.JPG" alt="" style="width:inherit;height:inherit;">
+                    <div class="line text-center">
                         <div class="text hide-s">
                             <div class="line">
                                 <div class="prev-arrow hide-s hide-m">
@@ -124,14 +122,26 @@
                                     <i class="icon-chevron_right"></i>
                                 </div>
                             </div>
-                            <h2>Connecting yesterday's smelly socks with Malaria research</h2>
-                            <p><a href="#about"><u>See how these unique experiments are conducted</u></a></p>
+                            <h2>Connecting Yesterday's Smelly Socks with Malaria Research</h2>
+                            <p><a href="#about"><u>See how These Unique Experiments are Conducted</u></a></p>
+                            <br />
+                            <div class="tabs">
+                                <div>
+                                    <a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation</a>
+                                </div>
+                            </div>
+                            <div class="tabs">
+                                <div>
+                                    <a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation With Socks</a>
+                                    <br /><br /><br /><br /><br /><br /><br />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <img src="img/mosquito2.jpg" alt="" style="width:1600px;height:800px;">
-                    <div class="line">
+                    <div class="line text-center">
                         <div class="text hide-s">
                             <div class="line">
                                 <div class="prev-arrow hide-s hide-m">
@@ -141,14 +151,25 @@
                                     <i class="icon-chevron_right"></i>
                                 </div>
                             </div>
-                            <h2>See the first ever mosquito race course!</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+                            <h2>See the First Ever Mosquito Race Course</h2>
+                            <p><a href="#results"><u>Watch Mosquitos Race Towards the Smellier Sock</u></a></p>
+                            <br />
+                            <div class="tabs">
+                                <div>
+                                    <a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation</a>
+                                </div>
+                            </div>
+                            <div class="tabs">
+                                <div>
+                                    <a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation With Socks</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <img src="img/mosquito3.jpg" alt="" style="width:1600px;height:800px;">
-                    <div class="line">
+                    <div class="line text-center">
                         <div class="text hide-s">
                             <div class="line">
                                 <div class="prev-arrow hide-s hide-m">
@@ -158,8 +179,19 @@
                                     <i class="icon-chevron_right"></i>
                                 </div>
                             </div>
-                            <h2>Donate today to see how your socks stack up</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+                            <h2>Donate Today to See How Your Socks Stack Up</h2>
+                            <p><a href="#services"><u>Contribute to Raising Malaria Awareness</u></a></p>
+                            <br />
+                            <div class="tabs">
+                                <div>
+                                    <a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation</a>
+                                </div>
+                            </div>
+                            <div class="tabs">
+                                <div>
+                                    <a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation With Socks</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -167,11 +199,11 @@
         </div>
 
         <!-- FIRST BLOCK/IHI INTRO -->
-        <div id="first-block">
+        <div id="first-block" style="background-color:#012232">
             <div class="line">
                 <h1>Ifakara Health Institute</h1>
                 <h5 style="color:white">See how the scientists at the Ifakara Health Institute are using your donated socks to find answers behind what attracts mosquitos to humans.</h5>
-                <div class="s-12 m-4 l-2 center"><a class="white-btn" href="#contact">Find Out How</a></div>
+                <div class="s-12 m-4 l-2 center"><a class="white-btn" href="#about">Find Out How</a></div>
             </div>
         </div>
 
@@ -187,7 +219,7 @@
         <!-- ABOUT INFO -->
         <div id="about-us">
             <div class="s-12 m-12 l-6 media-container">
-                <img src="img/mosquito6.jpg" alt="" style="width:900px;height:611px;">
+                <img src="img/machine4.jpg" class="img-responsive" alt="" style="width:inherit;height:inherit;">
             </div>
             <article class="s-12 m-12 l-6">
                 <h2>Explore The<br> <strong></strong>Smelly Socks Project</h2>
@@ -210,584 +242,241 @@
                 <div class="tabs">
                     <div class="tab-item tab-active">
                         <a class="tab-label active-btn">Race Videos</a>
-                        <div class="tab-content">
-                            <div class="margin">
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito7.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito2.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito1.jpg" alt="" style="width:420px;height:300px;"></a></div>
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/mosquito3.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                        <br />
+                        <div id="first-block" style="border-radius: 25px; background-color:#6f9600;">
+                            <br />
+                            <div class="tab-content">
+                                <div class="margin">
+                                    <div class="s-12 m-6 l-3 racerNames"><h4>Bill Gates VS Clint Dempsey</h4><a class="our-work-container lightbox margin-bottom" href="#video1" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito7.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                    <div class="s-12 m-6 l-3 racerNames"><h4>Bill Gates VS Clint Dempsey</h4><a class="our-work-container lightbox margin-bottom" href="#video1" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito2.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                    <div class="s-12 m-6 l-3 racerNames"><h4>Bill Gates VS Clint Dempsey</h4><a class="our-work-container lightbox margin-bottom" href="#video1" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito1.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                    <div class="s-12 m-6 l-3 racerNames"><h4>Bill Gates VS Clint Dempsey</h4><a class="our-work-container lightbox margin-bottom" href="#video1" data-toggle="modal"><div class="our-work-text"><h4><i class="icon-play"></i><br />Bill Gates vs Clint Dempsey</h4><p style="color:white">Click to watch the race.</p></div><img src="img/mosquito3.jpg" alt="" style="width:420px;height:300px;"></a></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="tab-item">
-                        <a class="tab-label">Current Champions</a>
-                        <div class="tab-content">
-                            <div class="margin">
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por7.jpg" alt=""></a></div>
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por5.jpg" alt=""></a></div>
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por1.jpg" alt=""></a></div>
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por2.jpg" alt=""></a></div>
+                        <a class="tab-label" id="currentChamps">Current Champions</a>
+                        <br />
+                        <div id="first-block" style="border-radius: 25px;">
+                            <br />
+                            <div class="tab-content">
+                                <div class="margin container">
+                                    <div class="row">
+
+                                        <div class="col-xs-3">
+                                            <div class="text-center counter counterStyle" data-count="87">0</div>
+                                        </div>
+                                        <br />
+                                        <div class="col-xs-7 infoArea">
+                                            <h2>Current Champion</h2>
+                                            <h4>Bill Gates</h4>
+                                            <p>Congradulations to Bill Gates for the highest attraction rate! Attracting <strong>87%</strong> of mosquitoes during four trial races, Bill currently holds 1st place in mosquito attractivness!</p>
+                                            <br />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center" style="color:white"><h3>Runners Up</h3></div>
+                                <div class="table-responsive" style="background-color: #FFF">
+                                    <table>
+                                        <tr>
+                                            <th>Standing</th>
+                                            <th>Name</th>
+                                            <th>Attractivness</th>
+                                            <th>Country</th>
+                                        </tr>
+                                        <tr>
+                                            <td>2nd Place</td>
+                                            <td>Maria Anders</td>
+                                            <td>85%</td>
+                                            <td>Germany</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3rd Place</td>
+                                            <td>Francisco Chang</td>
+                                            <td>84%</td>
+                                            <td>Mexico</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4th Place</td>
+                                            <td>Roland Mendel</td>
+                                            <td>82%</td>
+                                            <td>USA</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5th Place</td>
+                                            <td>Helen Bennett</td>
+                                            <td>76%</td>
+                                            <td>Ireland</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6th Place</td>
+                                            <td>Yoshi Tannamuri</td>
+                                            <td>76%</td>
+                                            <td>Australia</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7th Place</td>
+                                            <td>Giovanni Rovelli</td>
+                                            <td>71%</td>
+                                            <td>Tanzanaia</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-item">
+                        <a class="tab-label">Graphic Results</a>
+                        <br />
+                        <div id="first-block" style="border-radius: 25px;">
+                            <br />
+                            <div class="tab-content">
+                                <div class="margin">
+                                    <center>
+                                        <div class="image-responsive" id="chart_div"></div>
+                                    </center>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="tab-item">
                         <a class="tab-label">Data Library</a>
-                        <div class="tab-content">
-                            <div class="margin">
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por4.jpg" alt=""></a></div>
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por6.jpg" alt=""></a></div>
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por3.jpg" alt=""></a></div>
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por5.jpg" alt=""></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-item">
-                        <a class="tab-label">Break Down</a>
-                        <div class="tab-content">
-                            <div class="margin">
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por7.jpg" alt=""></a></div>
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por2.jpg" alt=""></a></div>
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por5.jpg" alt=""></a></div>
-                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Lorem Ipsum Dolor</h4><p>Laoreet dolore magna aliquam erat volutpat.</p></div><img src="img/por6.jpg" alt=""></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- OTHER PROJECTS/VOTE A PROJ-->
-        <div id="projects"></div>
-        <div id="our-work" style="background-color:#6f9600;">
-            <div class="line" style="color:white">
-                <h2 class="section-title" style="outline:white solid thick">Other Projects</h2>
-                <h4 style="color:white" class="text-center">We invite you to take a look at our other ongoing projects</h4>
-                <br />
-
-                <!--Row 1-->
-                <div class="margin text-center" style="outline:white solid thick; color:white">
-                    <br />
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito5.jpg" alt=""><img />
-                        <h2><u>Rabies Elimination</u></h2>
-                        <p>Assessing the progress towards rabies elimination from Pemba Island, Tanzania.</p>
                         <br />
-                    </div>
+                        <div id="first-block" style="border-radius: 25px;">
+                            <br />
+                            <div class="tab-content">
+                                <div class="margin">
 
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito4.jpg" alt=""><img />
-                        <h2><u>Introdcing Pastoralists</u></h2>
-                        <p>Engaging pastoralists in controlling malaria mosquitoes in their communities.</p>
-                        <br />
-                    </div>
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito2.jpg" alt=""><img />
-                        <h2><u>Videographic Analysis</u></h2>
-                        <p>Videographic analysis of mosquito behaviours around humans and mosquito traps.</p>
-                        <br />
-                    </div>
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito6.jpg" alt=""><img />
-                        <h2><u>Entomological Investigations</u></h2>
-                        <p>Using protein labels for entomological investigations into malaria transmission and control.</p>
-                        <br />
-                    </div>
-                    <!--Row 1's Buttons-->
-                    <div class="row">
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label btn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label btn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label btn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-
-                    <!--Row 2-->
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito6.jpg" alt=""><img />
-                        <h2><u>Rabies Elimination</u></h2>
-                        <p>Assessing the progress towards rabies elimination from Pemba Island, Tanzania.</p>
-                    </div>
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito5.jpg" alt=""><img />
-                        <h2><u>Introdcing Pastoralists</u></h2>
-                        <p>Engaging pastoralists in controlling malaria mosquitoes in their communities.</p>
-                    </div>
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito2.jpg" alt=""><img />
-                        <h2><u>Videographic Analysis</u></h2>
-                        <p>Videographic analysis of mosquito behaviours around humans and mosquito traps.</p>
-                    </div>
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito3.jpg" alt=""><img />
-                        <h2><u>Entomological Investigations</u> </h2>
-                        <p>Using protein labels for entomological investigations into malaria transmission and control.</p>
-                    </div>
-
-                    <!--Row 2's Buttons-->
-                    <div class="row">
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-
-                    <!--Row 3-->
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito4.jpg" alt=""><img />
-                        <h2><u>Rabies Elimination</u></h2>
-                        <p>Assessing the progress towards rabies elimination from Pemba Island, Tanzania.</p>
-                    </div>
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito6.jpg" alt=""><img />
-                        <h2><u>Introdcing Pastoralists</u></h2>
-                        <p>Engaging pastoralists in controlling malaria mosquitoes in their communities.</p>
-                    </div>
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito2.jpg" alt=""><img />
-                        <h2><u>Videographic Analysis</u></h2>
-                        <p>Videographic analysis of mosquito behaviours around humans and mosquito traps.</p>
-                    </div>
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito3.jpg" alt=""><img />
-                        <h2><u>Entomological Investigations</u> </h2>
-                        <p>Using protein labels for entomological investigations into malaria transmission and control.</p>
-                    </div>
-                    <!--Row 3's Buttons-->
-                    <div class="row">
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr />
-
-                    <!--Row 4-->
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito4.jpg" alt=""><img />
-                        <h2><u>Rabies Elimination</u></h2>
-                        <p>Assessing the progress towards rabies elimination from Pemba Island, Tanzania.</p>
-                    </div>
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito6.jpg" alt=""><img />
-                        <h2><u>Introdcing Pastoralists</u></h2>
-                        <p>Engaging pastoralists in controlling malaria mosquitoes in their communities.</p>
-                    </div>
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito2.jpg" alt=""><img />
-                        <h2><u>Videographic Analysis</u></h2>
-                        <p>Videographic analysis of mosquito behaviours around humans and mosquito traps.</p>
-                    </div>
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito3.jpg" alt=""><img />
-                        <h2><u>Entomological Investigations</u> </h2>
-                        <p>Using protein labels for entomological investigations into malaria transmission and control.</p>
-                    </div>
-                    <!--Row 4's Buttons-->
-                    <div class="row">
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr />
-                    <!--Row 5-->
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito4.jpg" alt=""><img />
-                        <h2><u>Rabies Elimination</u></h2>
-                        <p>Assessing the progress towards rabies elimination from Pemba Island, Tanzania.</p>
-                    </div>
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito6.jpg" alt=""><img />
-                        <h2><u>Introdcing Pastoralists</u></h2>
-                        <p>Engaging pastoralists in controlling malaria mosquitoes in their communities.</p>
-                    </div>
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito2.jpg" alt=""><img />
-                        <h2><u>Videographic Analysis</u></h2>
-                        <p>Videographic analysis of mosquito behaviours around humans and mosquito traps.</p>
-                    </div>
-                    <div class="s-12 m-6 l-3 margin-bottom">
-                        <img src="img/mosquito3.jpg" alt=""><img />
-                        <h2><u>Entomological Investigations</u> </h2>
-                        <p>Using protein labels for entomological investigations into malaria transmission and control.</p>
-                    </div>
-                    <!--Row 5's Buttons-->
-                    <div class="row">
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Vote this Project</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="tab-label tbn btn-primary">Learn More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!--VOTE RESULTS-->
-        <div id="first-block" class="text-center" style="text-align:center;">
-            <div class="line">
-                <h2 class="section-title">See Leading Projects</h2>
-            </div>
-            <div id="first-block">
-                <center>
-
-                    <div id="chart_div"></div>
-
-                    <!--<form method="post" action="http://poll.pollcode.com/85928767">
-                        <div style="background-color:#00283a;padding:2px;width:419px;font-family:Arial;font-size:x-large;color:#ffffff;outline-style:solid;outline-color:#6f9600; outline-width:thick">
-                            <div style="padding:2px 0px 4px 2px;">
-                                <strong>Vote Below</strong>
-                            </div>
-                            <input type="radio" name="answer" value="1" id="answer859287671" style="float:left;" />
-                            <label for="answer859287671" style="float:left;width:394px;">Alex's Socks (Mosquito Count: 29)</label>
-                            <div style="clear:both;height:2px;">
-
-                            </div>
-                            <input type="radio" name="answer" value="2" id="answer859287672" style="float:left;" />
-                            <label for="answer859287672" style="float:left;width:394px;">Salum's Socks (Mosquito Count: 26)</label>
-                            <div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="3" id="answer859287673" style="float:left;" />
-                            <label for="answer859287673" style="float:left;width:394px;">Eldad's Socks (Mosquito Count: 23)</label><div style="clear:both;height:2px;"></div>
-                            <input type="radio" name="answer" value="4" id="answer859287674" style="float:left;" /><label for="answer859287674" style="float:left;width:394px;">Sam's Socks (Mosquito Count: 23)</label>
-                            <div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="5" id="answer859287675" style="float:left;" />
-                            <label for="answer859287675" style="float:left;width:394px;">Manuu's Socks (Mosquito Count: 22)</label><div style="clear:both;height:2px;"></div>
-                            <div align="center" style="padding:3px;">
-                                <input style="width:10em;height:3em;" type="submit" value="Vote">&nbsp;
-                                <input style="width:10em;height:3em;" type="submit" name="view" value="View">
-                            </div>
-                            <div align="right" style="font-size:10px">
-                                pollcode.com <a href="http://pollcode.com/">free polls</a>
-                            </div>
-
-                        </div>
-                    </form>-->
-                </center>
             </div>
         </div>
 
         <!-- Donate -->
         <div id="services">
+            <h2 class="section-title">Donate</h2>
+            <div class="donate">
+                <br />
+                <h2 style="color:#00283a"><strong>Instructions for Donating Socks</strong></h2>
+                <h3 style="color:#00283a">United States:</h3>
+                <p style="color:#00283a">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                <h3 style="color:#00283a">Tanzania:</h3>
+                <p style="color:#00283a">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                <h3 style="color:#00283a">Europe:</h3>
+                <p style="color:#00283a">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                <br /> <br />
+            </div>
+
+            <br /> <br /> <br /> <br />
             <div class="line">
-                <h2 class="section-title">Donate</h2>
                 <div class="margin">
                     <div class="s-12 m-6 l-4 margin-bottom">
-                        <i class="icon-vector"></i>
+                        <i class="icon-sli-phone"></i>
                         <div class="service-text">
-                            <h3>Give to Malaria Research</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            <h3>Donate VIA Mobile Money</h3>
+                            <p>
+                                Send your donation to<br />
+                                AIRTEL MONEY :- 078928XXXX <br />
+                                TIGO PESA :- 065911XXXX<br />
+                                M-PESA :- 075889XXXX
+                            </p>
                         </div>
                     </div>
                     <div class="s-12 m-6 l-4 margin-bottom">
-                        <i class="icon-eye"></i>
-                        <div class="service-text">
-                            <h3>Donate your smelly socks</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                        </div>
+                        <img src="img/donate.jpg" alt="Image not avaiable" />
+                        <!--https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/donate_step_1/-->
                     </div>
                     <div class="s-12 m-12 l-4 margin-bottom">
                         <i class="icon-random"></i>
                         <div class="service-text">
-                            <h3>Something else</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            <h3>Donate to Project as a Whole</h3>
+                            <p>Please follow this <a href="http://ihi.or.tz/support-us/">link </a>to Ifakara Health Insitiute's donation page </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+
+
+
+
         <!--Add to Conversation-->
-        <div id="conversation"></div>
+        <!--<div id="conversation"></div>
         <div id="latest-news">
             <div class="line text-center">
                 <h2 class="section-title">Add to the Conversation</h2>
                 <br />
                 <div id="first-block" style="border-radius: 25px;">
-                    <br />
-                    <h3 style="color:white">FaceBook</h3>
-                    <div id="first-block">
-                        <div class="line">
-                            <div style="background-color:#ffffff" class="fb-comments" data-href="https://colinquinn.github.io/smellysocksproject1/" data-width="750" data-numposts="10"></div>
-                        </div>
-                        <br />
-                        <div class="row">
-                            <div class="fb-like" data-href="https://colinquinn.github.io/smellysocksproject1/" data-width="300" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
-                        </div>
-                    </div>
-                    <hr />
-                    <div>
-                        <div>
-
-                            <h3 style="color:white">Twitter</h3>
-                            <br />
-                            <a class="twitter-timeline" data-width="800" data-height="900" data-theme="light" href="https://twitter.com/TwitterDev/timelines/539487832448843776">National Park Tweets - Curated tweets by TwitterDev</a>
-                            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        </div>
-                        <br />
-                        <div>
-                            <a class="twitter-share-button"
-                               href="https://twitter.com/intent/tweet?text=Hello%20world"
-                               data-size="large">
-                                Tweet
-                            </a>
-                            <a class="twitter-follow-button"
-                               href="https://twitter.com/TwitterDev"
-                               data-size="large"
-                               data-show-count="false">
-                                Follow @TwitterDev
-                            </a>
-                        </div>
-                    </div>
-                    <!--<div class="margin">
-                    <div class="s-12 m-6 l-6">
-                        <div class="s-12 l-2">
-                            <div class="news-date">
-                                <p class="day">28</p><p class="month">AUGUST</p><p class="year">2015</p>
-                            </div>
-                        </div>
-                        <div class="s-12 l-10">
-                            <div class="news-text">
-                                <h4>First latest News</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="s-12 m-6 l-6">
-                        <div class="s-12 l-2">
-                            <div class="news-date">
-                                <p class="day">12</p><p class="month">JULY</p><p class="year">2015</p>
-                            </div>
-                        </div>
-                        <div class="s-12 l-10">
-                            <div class="news-text">
-                                <h4>Second latest News</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
-                            </div>
-                        </div>-->
-                    <!--</div>
-                    </div>-->
-                </div>
+                    <br />-->
+        <!--<h3 style="color:white">FaceBook</h3>
+        <div id="first-block">
+            <div class="line">
+                <div style="background-color:#ffffff" class="fb-comments" data-href="https://colinquinn.github.io/smellysocksproject1/" data-width="750" data-numposts="10"></div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="fb-like" data-href="https://colinquinn.github.io/smellysocksproject1/" data-width="300" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
             </div>
         </div>
-
+        <hr />
+        <div>
+            <div>
+                <h3>Twitter</h3>
+                <a class="twitter-timeline" data-width="800" data-height="900" data-theme="light" href="https://twitter.com/TwitterDev/timelines/539487832448843776">National Park Tweets - Curated tweets by TwitterDev</a>
+                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <br />
+            <div>
+                <a class="twitter-share-button"
+                   href="https://twitter.com/intent/tweet?text=Hello%20world"
+                   data-size="large">
+                    Tweet
+                </a>
+                <a class="twitter-follow-button"
+                   href="https://twitter.com/TwitterDev"
+                   data-size="large"
+                   data-show-count="false">
+                    Follow @TwitterDev
+                </a>
+            </div>
+        </div>-->
+        <!--</div>
+            </div>
+        </div>-->
+        <!--Calender thing-->
+        <!--<div class="margin">
+            <div class="s-12 m-6 l-6">
+                <div class="s-12 l-2">
+                    <div class="news-date">
+                        <p class="day">28</p><p class="month">AUGUST</p><p class="year">2015</p>
+                    </div>
+                </div>
+                <div class="s-12 l-10">
+                    <div class="news-text">
+                        <h4>First latest News</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="s-12 m-6 l-6">
+                <div class="s-12 l-2">
+                    <div class="news-date">
+                        <p class="day">12</p><p class="month">JULY</p><p class="year">2015</p>
+                    </div>
+                </div>
+                <div class="s-12 l-10">
+                    <div class="news-text">
+                        <h4>Second latest News</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>-->
         <!-- CONTACT -->
         <div id="contact">
             <div class="line">
@@ -827,6 +516,24 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d22341.74826251386!2d36.68645839521739!3d-8.152229463917232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2stz!4v1486039885969" width="100%" height="450" frameborder="0" style="border:0"></iframe>
         </div>
     </section>
+
+    <div class="videoPlayer">
+        <!-- Modal HTML -->
+        <div id="video1" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Bill Gates VS Clint Dempsey</h4>
+                    </div>
+                    <div class="modal-body">
+                        <iframe id="raceVideo" width="560" height="315" src="//www.youtube.com/embed/rD8SmacBUcU" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- FOOTER -->
     <footer>

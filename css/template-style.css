@@ -187,6 +187,7 @@ p.logo {
     text-align: center;
 }
 
+
     #first-block h1 {
         color: #fff;
         font-size: 2em;
@@ -386,7 +387,7 @@ h2.section-title {
     right: 0;
     text-align: center;
     transition: opacity 0.20s linear 0s;
-    -o-transition: opacityd 0.20s linear 0s;
+    -o-transition: opacity 0.20s linear 0s;
     -ms-transition: opacity 0.20s linear 0s;
     -moz-transition: opacity 0.20s linear 0s;
     -webkit-transition: opacity 0.20s linear 0s;
@@ -432,7 +433,7 @@ a.tab-label, a.tab-label:link, a.tab-label:visited {
     }
 
 #services {
-    background: #6f9600 none repeat scroll 0 0;
+    background: #012232 none repeat scroll 0 0;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     padding: 6em 2em;
 }
@@ -633,3 +634,58 @@ footer {
         text-align: center;
     }
 }
+
+.videoPlayer {
+    margin: 20px;
+}
+
+.modal-content iframe {
+    margin: 0 auto;
+    display: block;
+}
+
+.infoArea {
+    background-color: #FFF;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.counter {
+    margin: 1.5%;
+    font-size: 50px;
+    background-color: #012232;
+    width: 200px;
+    line-height: 200px;
+    height: 200px;
+    background-color: #6f9600;
+    border-radius: 50%;
+}
+
+.donate {
+    color: #00283a;
+    border-radius: 25px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.racerNames {
+    text-align: center;
+    color: white;
+    font-size: medium;
+}
+
+.my-btn {
+    color: #fff;
+    background-color: #00283a;
+    border: solid #2b669a;
+}
+
+    .my-btn:hover {
+        transition: all 0.20s linear 0s;
+        -o-transition: all 0.20s linear 0s;
+        -ms-transition: all 0.20s linear 0s;
+        -moz-transition: all 0.20s linear 0s;
+        -webkit-transition: all 0.20s linear 0s;
+        background-color: #6f9600;
+        color: #fff;
+    }
