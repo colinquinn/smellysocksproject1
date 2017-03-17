@@ -421,6 +421,7 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after, ul.chevron .as
 }
 
 .line {
+    padding-top: 100px;
     clear: left;
 }
 
