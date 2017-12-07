@@ -328,7 +328,7 @@ article ul {
 }
 
 h2.section-title:after {
-    background: #dedede none repeat scroll 0 0;
+    background: #000000 none repeat scroll 0 0;
     content: "";
     display: block;
     height: 1px;
@@ -348,7 +348,7 @@ h2.header {
 }
 
 h2.section-title {
-    color: #dedede;
+    color: #000000;
     font-size: 3.8em;
     font-weight: 700;
     letter-spacing: -1px;
