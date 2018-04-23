@@ -12,9 +12,12 @@
 	<link rel="stylesheet" href="css/components.css">
 	<link rel="stylesheet" href="css/responsee.css">
 	<link rel="stylesheet" href="css/icons.css">
+	<link rel="stylesheet" href="css/d3-style.css">
 	<link rel="stylesheet" href="owl-carousel/owl.carousel.css">
 	<link rel="stylesheet" href="owl-carousel/owl.theme.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/nouislider.css">
+	<script src="https://d3js.org/d3.v4.min.js"></script>
 
 	<!-- CUSTOM STYLE -->
 	<link rel="icon" href="img/socklogo.png">
@@ -22,6 +25,14 @@
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/template-scripts.js"></script>
+	<script type="text/javascript" src="js/d3-tip.js"></script>
+	<script type="text/javascript" src="js/nouislider.js"></script>
+
+	<!--World Map src below:-->
+	<script src="http://d3js.org/d3.v4.min.js"></script>
+	<script src="http://d3js.org/queue.v1.min.js"></script>
+	<script src="http://d3js.org/topojson.v1.min.js"></script>
+
 
 
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -52,23 +63,23 @@
 			barData.addColumn('string', 'Racer Name');
 			barData.addColumn('number', 'Attractivness (%)');
 			barData.addRows([
-              ['Salum Mapua', 87],
-              ['Emmanuel Mwanga', 85],
-              ['Samson Kiware', 84],
-              ['Rahel Peterson', 80],
-              ['Cordula Heiller', 76],
-              ['Yoshi Tannamuri', 75],
-              ['Colin Quinn', 71],
-              ['Jack Nugent', 71],
-              ['Daniel Danhofer', 70],
-              ['Doreen Josen', 68],
-              ['Mercy Opiyo', 68],
-              ['WInnie Mponzi', 67],
-              ['Lina Finda', 67],
-              ['Alex Limwagu', 66],
-              ['Halfan Ngowo', 65],
-              ['Emanuel Kaindoa', 64],
-              ['Nancy Stephen', 63]
+				['Salum Mapua', 87],
+				['Emmanuel Mwanga', 85],
+				['Samson Kiware', 84],
+				['Rahel Peterson', 80],
+				['Cordula Heiller', 76],
+				['Yoshi Tannamuri', 75],
+				['Colin Quinn', 71],
+				['Jack Nugent', 71],
+				['Daniel Danhofer', 70],
+				['Doreen Josen', 68],
+				['Mercy Opiyo', 68],
+				['WInnie Mponzi', 67],
+				['Lina Finda', 67],
+				['Alex Limwagu', 66],
+				['Halfan Ngowo', 65],
+				['Emanuel Kaindoa', 64],
+				['Nancy Stephen', 63]
 			]);
 
 			// Set chart options
@@ -90,12 +101,12 @@
 		function drawPieChart() {
 
 			var data = google.visualization.arrayToDataTable([
-			  ['Country', 'Socks Dontated'],
-			  ['United States of America', 11],
-			  ['United Kingdom', 2],
-			  ['France', 2],
-			  ['Germany', 2],
-			  ['Italy', 7]
+				['Country', 'Socks Dontated'],
+				['United States of America', 11],
+				['United Kingdom', 2],
+				['France', 2],
+				['Germany', 2],
+				['Italy', 7]
 			]);
 
 			var pieOptions = {
@@ -113,203 +124,251 @@
 
 	</script>
 
-
 </head>
 
 <body class="size-1140">
 
-    <!-- TOP NAV WITH LOGO -->
-    <header>
-        <div id="topbar">
-            <div class="line">
-                <div class="s-12 m-6 l-6">
-                    <p>CONTACT US: <strong>+255 232 625 164</strong> | <strong>donate@ihi.or.tz</strong></p>
-                </div>
-                <div class="s-12 m-6 l-6">
-                    <div class="social right">
-                        <a href="https://www.facebook.com/Ifakara-Health-Institute-1283652051698612/"><i class="icon-facebook_circle"></i></a> <a href="https://twitter.com/ifakarahealth"><i class="icon-twitter_circle"></i></a> <a href="https://www.youtube.com/channel/UCcHPSsPbn7BpEjjMu2QR-cQ"><i class="icon-sli-social-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <nav>
+	<!-- TOP NAV WITH LOGO -->
+	<header>
+		<div id="topbar">
+			<div class="line">
+				<div class="s-12 m-6 l-6">
+					<p>CONTACT US: <strong>+255 232 625 164</strong> | <strong>donate@ihi.or.tz</strong></p>
+				</div>
+				<div class="s-12 m-6 l-6">
+					<div class="social right">
+						<a href="https://www.facebook.com/Ifakara-Health-Institute-1283652051698612/"><i class="icon-facebook_circle"></i></a> <a href="https://twitter.com/ifakarahealth"><i class="icon-twitter_circle"></i></a> <a href="https://www.youtube.com/channel/UCcHPSsPbn7BpEjjMu2QR-cQ"><i class="icon-sli-social-youtube"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav>
 
-            <div class="line">
-                <div class="s-12 l-2">
-                    <p class="logo">Smelly<strong>Socks</strong>Project</p>
-                </div>
-                <div class="top-nav s-12 l-10">
-                    <p class="nav-text">Custom menu text</p>
-                    <ul class="right">
-                        <li class="active-item"><a href="#carousel">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#results">Race Results</a></li>
-                        <!--<li><a href="#projects">Other Projects</a></li>-->
-                        <li><a href="#services">Donate</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <section>
+			<div class="line">
+				<div class="s-12 l-2">
+					<p class="logo">Smelly<strong>Socks</strong>Project</p>
+				</div>
+				<div class="top-nav s-12 l-10">
+					<p class="nav-text">Custom menu text</p>
+					<ul class="right">
+						<li class="active-item"><a href="#carousel">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#results">Race Results</a></li>
+						<!--<li><a href="#projects">Other Projects</a></li>-->
+						<li><a href="#services">Donate</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<section>
 
-        <!-- CAROUSEL -->
-        <div id="carousel">
-            <div id="owl-demo" class="owl-carousel owl-theme">
-                <div class="item">
-                    <img class="img-responsive" src="img/scientist_machine.JPG" alt="" style="width:inherit;height:inherit;">
-                    <div class="line text-center">
-                        <div class="text hide-s">
-                            <div class="line">
-                                <div class="prev-arrow hide-s hide-m">
-                                    <i class="icon-chevron_left"></i>
-                                </div>
-                                <div class="next-arrow hide-s hide-m">
-                                    <i class="icon-chevron_right"></i>
-                                </div>
-                            </div>
-                            <h2>Connecting Yesterday's Smelly Socks with Malaria Research</h2>
-                            <p><a href="#about"><u>See how These Unique Experiments are Conducted</u></a></p>
-                            <br />
-                            <div class="tabs">
-                                <div>
-                                    <a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="btn my-btn" href="#moneyDonate" style="padding: 15px 50px">Make a Donation With Socks</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img class="img-responsive" src="img/mosquito2.jpg" alt="" style="width:inherit;height:inherit;">
-                    <div class="line text-center">
-                        <div class="text hide-s">
-                            <div class="line">
-                                <div class="prev-arrow hide-s hide-m">
-                                    <i class="icon-chevron_left"></i>
-                                </div>
-                                <div class="next-arrow hide-s hide-m">
-                                    <i class="icon-chevron_right"></i>
-                                </div>
-                            </div>
-                            <h2>See the First Ever Mosquito Race Course</h2>
-                            <p><a href="#results"><u>Watch Mosquitos Race Towards the Smellier Sock</u></a></p>
-                            <br />
-                            <div class="tabs">
-                                <div>
-                                    <a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="btn my-btn" href="#moneyDonate" style="padding: 15px 50px">Make a Donation With Socks</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img class="img-responsive" src="img/sock1.jpg" alt="" style="width:inherit;height:inherit;">
-                    <div class="line text-center">
-                        <div class="text hide-s">
-                            <div class="line">
-                                <div class="prev-arrow hide-s hide-m">
-                                    <i class="icon-chevron_left"></i>
-                                </div>
-                                <div class="next-arrow hide-s hide-m">
-                                    <i class="icon-chevron_right"></i>
-                                </div>
-                            </div>
-                            <h2>Donate Today to See How Your Socks Stack Up</h2>
-                            <p><a href="#services"><u>Contribute to Raising Malaria Awareness</u></a></p>
-                            <br />
-                            <div class="tabs">
-                                <div>
-                                    <a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation</a>
-                                </div>
-                            </div>
-                            <div class="tabs">
-                                <div>
-                                    <a class="btn my-btn" href="#moneyDonate" style="padding: 15px 50px">Make a Donation With Socks</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+		<!-- CAROUSEL -->
+		<div id="carousel">
+			<div id="owl-demo" class="owl-carousel owl-theme">
+				<div class="item">
+					<img class="img-responsive" src="img/scientist_machine.JPG" alt="" style="width:inherit;height:inherit;">
+					<div class="line text-center">
+						<div class="text hide-s">
+							<div class="line">
+								<div class="prev-arrow hide-s hide-m">
+									<i class="icon-chevron_left"></i>
+								</div>
+								<div class="next-arrow hide-s hide-m">
+									<i class="icon-chevron_right"></i>
+								</div>
+							</div>
+							<h2>Connecting Yesterday's Smelly Socks with Malaria Research</h2>
+							<p><a href="#about"><u>See how These Unique Experiments are Conducted</u></a></p>
+							<br />
+							<div class="tabs">
+								<div>
+									<a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation</a>
+								</div>
+							</div>
+							<div class="tabs">
+								<div>
+									<a class="btn my-btn" href="#moneyDonate" style="padding: 15px 50px">Make a Donation With Socks</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img class="img-responsive" src="img/mosquito2.jpg" alt="" style="width:inherit;height:inherit;">
+					<div class="line text-center">
+						<div class="text hide-s">
+							<div class="line">
+								<div class="prev-arrow hide-s hide-m">
+									<i class="icon-chevron_left"></i>
+								</div>
+								<div class="next-arrow hide-s hide-m">
+									<i class="icon-chevron_right"></i>
+								</div>
+							</div>
+							<h2>See the First Ever Mosquito Race Course</h2>
+							<p><a href="#results"><u>Watch Mosquitos Race Towards the Smellier Sock</u></a></p>
+							<br />
+							<div class="tabs">
+								<div>
+									<a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation</a>
+								</div>
+							</div>
+							<div class="tabs">
+								<div>
+									<a class="btn my-btn" href="#moneyDonate" style="padding: 15px 50px">Make a Donation With Socks</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img class="img-responsive" src="img/sock1.jpg" alt="" style="width:inherit;height:inherit;">
+					<div class="line text-center">
+						<div class="text hide-s">
+							<div class="line">
+								<div class="prev-arrow hide-s hide-m">
+									<i class="icon-chevron_left"></i>
+								</div>
+								<div class="next-arrow hide-s hide-m">
+									<i class="icon-chevron_right"></i>
+								</div>
+							</div>
+							<h2>Donate Today to See How Your Socks Stack Up</h2>
+							<p><a href="#services"><u>Contribute to Raising Malaria Awareness</u></a></p>
+							<br />
+							<div class="tabs">
+								<div>
+									<a class="btn my-btn" href="#services" style="padding: 15px 50px">Make a Donation</a>
+								</div>
+							</div>
+							<div class="tabs">
+								<div>
+									<a class="btn my-btn" href="#moneyDonate" style="padding: 15px 50px">Make a Donation With Socks</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <!-- FIRST BLOCK/IHI INTRO -->
-        <div id="first-block" style="background-color:#012232">
-            <div class="line">
-                <h1>Ifakara Health Institute</h1>
-                <h5 style="color:white">See how the scientists at the Ifakara Health Institute are using your donated socks to find answers behind what attracts mosquitos to humans.</h5>
-                <div class="s-12 m-4 l-2 center"><a class="white-btn" href="#about">Find Out How</a></div>
-            </div>
-        </div>
+		<!-- FIRST BLOCK/IHI INTRO -->
+		<div id="first-block" style="background-color:#012232">
+			<div class="line">
+				<h1>Ifakara Health Institute</h1>
+				<h5 style="color:white">See how the scientists at the Ifakara Health Institute are using your donated socks to find answers behind what attracts mosquitos to humans.</h5>
+				<div class="s-12 m-4 l-2 center"><a class="white-btn" href="#about">Find Out How</a></div>
+			</div>
+		</div>
 
-        <!-- ABOUT HEADER -->
-        <div id="about">
-            <div id="our-work">
-                <div class="line">
-                    <h2 class="section-title" style="color:#00283a">About</h2>
-                </div>
-            </div>
-        </div>
 
-        <!-- ABOUT INFO -->
-        <div id="about-us">
 
-            <img src="img/machine4.JPG" class="img-responsive pull-left" alt="" style="width:50%;height:50%;padding-right:5%;padding-bottom:2%">
+		<!-- ABOUT HEADER -->
+		<div id="about">
+			<div id="our-work">
+				<div class="line">
+					<h2 class="section-title" style="color:#00283a">About</h2>
+				</div>
+			</div>
+		</div>
 
-            <article>
-                <h2>Explore The<br> <strong></strong>Smelly Socks Project</h2>
-                <p>
-                    Are you a mosquito magnet? The Smelly Sock Project is making new discoveries towards the understanding of what attracts a mosquito to a human being. The main attractant? <b>The way you smell.</b><br />
-                    <br />  There are a number of factors that contribute to the process of attracting a mosquito. Primarily, the CO<sup>2</sup> you exhale and the perspiration released from your eccrine glands (sweat) are the main contributors to those pesky mosquitos flying around you. Here on the Smelly Socks Project, we use this information with our very own Smell Machine to determine which combinations of these two factors attract the most mosquitos.<br />
-                </p>
+		<!-- ABOUT INFO -->
+		<div id="about-us">
 
-                <h3>How it Works:</h3><br />
+			<img src="img/machine4.JPG" class="img-responsive pull-left" alt="" style="width:50%;height:50%;padding-right:5%;padding-bottom:2%">
 
-                <h4 style="color:#6f9600">1.	Starting Chambers</h4>
-                <p>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    -Where the race begins. Exactly 25 mosquitos are placed in this chamber and await the start of the race when the barrier is removed, and they are able to fly down the race course.<br />
-                </p>
-                <h4 style="color:#6f9600">2.	Flight Tube</h4>
-                <p>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    -Within these tubes, the mosquitos fly at a rapid pace toward the attractant. It is here where the mosquitos will begin to choose which sock is more attractive.
-                </p>
+			<article>
+				<h2>Explore The<br> <strong></strong>Smelly Socks Project</h2>
+				<p>
+					Are you a mosquito magnet? The Smelly Sock Project is making new discoveries towards the understanding of what attracts a mosquito to a human being. The main attractant? <b>The way you smell.</b><br />
+					<br />  There are a number of factors that contribute to the process of attracting a mosquito. Primarily, the CO<sup>2</sup> you exhale and the perspiration released from your eccrine glands (sweat) are the main contributors to those pesky mosquitos flying around you. Here on the Smelly Socks Project, we use this information with our very own Smell Machine to determine which combinations of these two factors attract the most mosquitos.<br />
+				</p>
 
-                <h4 style="color:#6f9600">  3.	Decision Chamber</h4>
-                <p>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    -Here the mosquitos decide which sock they prefer and direct their flight path towards their preference. A combination of how each sock smells and the CO<sup>2</sup> passing through the flight tube gives each mosquito what they need to know to make this decision.<br /><br />
-                </p>
-                <h4 style="color:#6f9600">4.	Stimulus Chambers</h4>
-                <p>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    -Each chamber holds a different sock. The chamber with the most mosquitos at the end of 2 minutes will be the winner of the race.<br />
-                <p>
-                    <br />Throughout the Smell Machine there is a constant flow of CO<sup>2</sup> from the Stimulus Chamber to the Starting Chamber that carries the smell of your smelly socks. This smell attracts the mosquitos through the Flight Tube and eventually to the Decision Chamber. Depending on which sock is more attractive to each individual mosquito, they will choose which chamber they will fly into.<br />
-                <p><a href="#services"><u>See how your socks stack up in our Smelly Socks World Tournament!</u></a></p>
+				<h3>How it Works:</h3><br />
 
-                </p>
-            </article>
-        </div>
+				<h4 style="color:#6f9600">1.	Starting Chambers</h4>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					-Where the race begins. Exactly 25 mosquitos are placed in this chamber and await the start of the race when the barrier is removed, and they are able to fly down the race course.<br />
+				</p>
+				<h4 style="color:#6f9600">2.	Flight Tube</h4>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					-Within these tubes, the mosquitos fly at a rapid pace toward the attractant. It is here where the mosquitos will begin to choose which sock is more attractive.
+				</p>
 
-        <!-- RESULTS -->
-        <div id="results"></div>
-        <div id="our-work">
-            <div class="line">
-                <h2 class="section-title">Results</h2>
-                <div class="tabs">
+				<h4 style="color:#6f9600">  3.	Decision Chamber</h4>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					-Here the mosquitos decide which sock they prefer and direct their flight path towards their preference. A combination of how each sock smells and the CO<sup>2</sup> passing through the flight tube gives each mosquito what they need to know to make this decision.<br /><br />
+				</p>
+				<h4 style="color:#6f9600">4.	Stimulus Chambers</h4>
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					-Each chamber holds a different sock. The chamber with the most mosquitos at the end of 2 minutes will be the winner of the race.<br />
+				<p>
+					<br />Throughout the Smell Machine there is a constant flow of CO<sup>2</sup> from the Stimulus Chamber to the Starting Chamber that carries the smell of your smelly socks. This smell attracts the mosquitos through the Flight Tube and eventually to the Decision Chamber. Depending on which sock is more attractive to each individual mosquito, they will choose which chamber they will fly into.<br />
+				<p><a href="#services"><u>See how your socks stack up in our Smelly Socks World Tournament!</u></a></p>
+
+				</p>
+			</article>
+		</div>
+
+
+		<!-- RESULTS -->
+		<div id="our-work" style="background-color:#e1e1e1">
+			<h2 class="section-title">Results</h2>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-4">
+						<h2 style="color:#6f9600;text-align:center"><strong>Donate a Sock?</strong></h2>
+						<h3 style="color:#6f9600;text-align:center">Enter Your Name Below:</h3>
+						<form class="customform" action="">
+							<div class="s-12"><input name="" placeholder="Your name" title="Your name" type="text" /></div>
+							<div class="s-12 m-12"><button class="color-btn" type="submit">Submit Button</button></div>
+						</form>
+					</div>
+					<div class="col-md-8">
+						<h2 style="color:#00283a;text-align:center"><strong>Want to See How Your Home Country Stacks Up?</strong></h2>
+						<h3 style="color:#00283a;text-align:center">Select a Country Below:</h3>
+						<br />
+						<div id="worldmap"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4" style="text-align:center;">
+						<div id="countryname"><h1>Country Selected: </h1></div>
+						<div class="radio">
+							<br />
+							<label><input type="radio" name="optradio">Males</label>
+						</div>
+						<div class="radio">
+							<br />
+							<label><input type="radio" name="optradio">Females</label>
+						</div>
+						<div class="radio">
+							<br />
+							<label><input type="radio" name="optradio">Both</label>
+						</div>
+						<br />
+						<div class="slider" id="slider-handles"></div>
+					</div>
+					<div class="col-md-8">
+						<div id="smellgraph"></div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<br /><br /><br /><br /><br /><br /><br /><br />
+
+
+
+			<div class="line">
+				<div class="tabs">
 					<div class="tab-item tab-active">
 						<a class="tab-label active-btn" id="currentChamps">Current Champions</a>
 						<br />
@@ -348,66 +407,18 @@
 											<td>85%</td>
 											<td>Tanzania</td>
 										</tr>
-										<tr>
-											<td>3rd Place</td>
-											<td>Samson Kiware</td>
-											<td>84%</td>
-											<td>Tanzania</td>
-										</tr>
-										<tr>
-											<td>4th Place</td>
-											<td>Rahel Peterson</td>
-											<td>82%</td>
-											<td>Switzerland</td>
-										</tr>
-										<tr>
-											<td>5th Place</td>
-											<td>Cordula Heiller</td>
-											<td>76%</td>
-											<td>Austria</td>
-										</tr>
-										<tr>
-											<td>6th Place</td>
-											<td>Yoshi Tannamuri</td>
-											<td>75%</td>
-											<td>Japan</td>
-										</tr>
-										<tr>
-											<td>7th Place</td>
-											<td>Colin Quinn</td>
-											<td>71%</td>
-											<td>USA</td>
-										</tr>
-										<tr>
-											<td>8th Place</td>
-											<td>Jack Nugent</td>
-											<td>71%</td>
-											<td>Austraila</td>
-										</tr>
-										<tr>
-											<td>9th Place</td>
-											<td>Daniel Danhofer</td>
-											<td>70%</td>
-											<td>Austria</td>
-										</tr>
-										<tr>
-											<td>10th Place</td>
-											<td>Doreen Josen</td>
-											<td>68%</td>
-											<td>Tanzania</td>
-										</tr>
 									</table>
 								</div>
 							</div>
 						</div>
 					</div>
-                    <div class="tab-item">
-                        <a class="tab-label">Graphic Results</a>
-                        <br />
-                        <div id="first-block" style="border-radius: 25px;">
-                            <br />
-                            <div class="tab-content">
-                                <div class="margin">
+					<div class="tab-item">
+						<a class="tab-label">Graphic Results</a>
+						<br />
+						<div id="first-block" style="border-radius: 25px;">
+							<br />
+							<div class="tab-content">
+								<div class="margin">
 
 
 									<!--<table class="columns">
@@ -419,332 +430,48 @@
 										</tr>
 									</table>-->
 
-                                    <center>
-                                        <div class="image-responsive" id="bar_chart_div"></div>
+									<center>
+										<div class="image-responsive" id="bar_chart_div"></div>
 										<div class="image-responsive" id="pie_chart_div" style="margin-top: 5%"></div>
-                                    </center>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-item">
-                        <a class="tab-label">Data Library</a>
-                        <br />
-                        <div id="first-block" style="border-radius: 25px;">
-                            <p style="color:#fff;">
-                                Data Collected from Donated Socks
-                            </p>
-                            <br />
-                            <div class="tab-content">
-                                <div class="margin">
-                                    <div class="table-responsive" style="background-color: #FFF">
-                                        <table>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Round</th>
-                                                <th>Date</th>
-                                                <th>Attractivness</th>
-                                                <th>MO Type</th>
-                                                <th>Country</th>
-                                            </tr>
-                                            <tr>
-                                                <td>Emmanuel Mwanga</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Tanzania</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Samson Kiware</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>15/13/18/23 : 69</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Tanzania</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Rahel Peterson</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>11/23/20/5 : 59</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Switzerland</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Cordula Heiller</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>5/7/17/25 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Austria</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Yoshi Tannamuri</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Japan</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Colin Quinn</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>15/13/18/23 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>USA</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jack Nugent</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Austraila</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Daniel Danhofer</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Austria</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Doreen Josen</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Tanzania</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Emmanuel Mwanga</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Tanzania</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Samson Kiware</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>15/13/18/23 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Tanzania</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Rahel Peterson</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>11/23/20/5 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Switzerland</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Cordula Heiller</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>5/7/17/25 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Austria</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Yoshi Tannamuri</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Japan</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Colin Quinn</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>15/13/18/23 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>USA</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jack Nugent</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Austraila</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Daniel Danhofer</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>2/13/24/8 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Austria</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Doreen Josen</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Tanzania</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Emmanuel Mwanga</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Tanzania</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Samson Kiware</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>15/13/18/23 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Tanzania</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Rahel Peterson</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>11/23/20/5 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Switzerland</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Cordula Heiller</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>5/7/17/25 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Austria</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Yoshi Tannamuri</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Japan</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Colin Quinn</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>15/13/18/23 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>USA</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jack Nugent</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Austraila</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Daniel Danhofer</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Austria</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Doreen Josen</td>
-                                                <td>SSP1_0</td>
-                                                <td>5/3/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Tanzania</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Emmanuel Mwanga</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Tanzania</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Samson Kiware</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>15/13/18/23 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Tanzania</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Rahel Peterson</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>11/23/20/5 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Switzerland</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Cordula Heiller</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>5/7/17/25 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Austria</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Yoshi Tannamuri</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Japan</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Colin Quinn</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>15/13/18/23 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>USA</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jack Nugent</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Austraila</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Daniel Danhofer</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>2/13/24/8 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Austria</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Doreen Josen</td>
-                                                <td>SSP1_1</td>
-                                                <td>5/4/2017</td>
-                                                <td>12/23/10/22 : 62</td>
-                                                <td>An. Arabiensis</td>
-                                                <td>Tanzania</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+									</center>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-item">
+						<a class="tab-label">Data Library</a>
+						<br />
+						<div id="first-block" style="border-radius: 25px;">
+							<p style="color:#fff;">
+								Data Collected from Donated Socks
+							</p>
+							<br />
+							<div class="tab-content">
+								<div class="margin">
+									<div class="table-responsive" style="background-color: #FFF">
+										<table>
+											<tr>
+												<th>Name</th>
+												<th>Round</th>
+												<th>Date</th>
+												<th>Attractivness</th>
+												<th>MO Type</th>
+												<th>Country</th>
+											</tr>
+											<tr>
+												<td>Emmanuel Mwanga</td>
+												<td>SSP1_0</td>
+												<td>5/3/2017</td>
+												<td>12/23/10/22 : 62</td>
+												<td>An. Arabiensis</td>
+												<td>Tanzania</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="tab-item">
 						<a class="tab-label">Race Videos</a>
 						<br />
@@ -760,164 +487,166 @@
 							</div>
 						</div>
 					</div>
-                </div>
-            </div>
-        </div>
+				</div>
+			</div>
+		</div>
 
-        <!-- Donate -->
-        <div id="services">
-            <h2 class="section-title">Donate</h2>
-            <div class="donate">
-                <br />
-                <h2 style="color:#00283a"><strong>Instructions for Donating Socks</strong></h2>
-                <h3 style="color:#00283a">Tanzania:</h3>
-                <p style="color:#00283a">
-                    We invite you to dontate your smelly socks via the following methods: <br />
+		<!-- Donate -->
+		<div id="services">
+			<h2 class="section-title">Donate</h2>
+			<div class="donate">
+				<br />
+				<h2 style="color:#00283a"><strong>Instructions for Donating Socks</strong></h2>
+				<h3 style="color:#00283a">Tanzania:</h3>
+				<p style="color:#00283a">
+					We invite you to dontate your smelly socks via the following methods: <br />
 
-                    <b>- Send or Drop off Socks to Ifakara Branch</b>: Off Mlabani Passage Ifakara P.O. Box 53 Ifakara <br />
-                    <b>- Send or Drop off Socks to Dar es Salaam Branch</b>: Ifakara Health Institute Plot 463, Kiko Avenue Mikocheni Dar es Salaam P.O. Box 78 373 Dar es Salaam
-
-
-                    <h3 style="color:#00283a">United States:</h3>
-                <p style="color:#00283a">Instructions coming soon!</p>
-                <h3 style="color:#00283a">Europe:</h3>
-                <p style="color:#00283a">Instructions coming soon!</p>
-                <br /> <br />
-            </div>
-
-            <br /> <br /> <br /> <br />
-            <div id="moneyDonate"></div>
-            <div class="line">
-                <div class="margin">
-                    <div class="s-12 m-6 l-4 margin-bottom">
-                        <i class="icon-sli-phone"></i>
-                        <div class="service-text">
-                            <h3>Donate VIA Mobile Money</h3>
-                            <p>
-                                Send your donation to<br />
-                                AIRTEL MONEY :- 078928XXXX <br />
-                                TIGO PESA :- 065911XXXX<br />
-                                M-PESA :- 075889XXXX
-                            </p>
-                        </div>
-                    </div>
-                    <div class="s-12 m-6 l-4 margin-bottom">
-                        <img src="img/donate.jpg" alt="Image not avaiable" style="border-radius:5px;" />
-                        <div class="text-center" style="color:#FFFFFF;border-radius:5px;"></div>
-                        <!--https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/donate_step_1/-->
-                    </div>
-                    <div class="s-12 m-12 l-4 margin-bottom">
-                        <i class="icon-random"></i>
-                        <div class="service-text">
-                            <h3>Donate to Project as a Whole</h3>
-                            <p>Please follow this <a href="http://ihi.or.tz/support-us/">link </a>to Ifakara Health Insitiute's donation page </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- CONTACT -->
-        <div id="contact">
-            <div class="line">
-                <h2 class="section-title">Contact Us</h2>
-                <div class="margin">
-                    <div class="s-12 m-12 l-3 hide-m hide-s margin-bottom right-align">
-                        <img src="img/logo.png" alt="" style="border:1px solid black;" />
-                    </div>
-                    <div class="s-12 m-12 l-4 margin-bottom right-align">
-                        <h3>Ifakara Health Institute</h3>
-                        <address>
-                            <p><strong>Adress:</strong> Off Mlabani Passage, PO Box 53, Ifakara</p>
-                            <p><strong>Country:</strong>Tanzanaia</p>
-                            <p><strong>E-mail:</strong> example@ihi.or.tz</p>
-                        </address>
-                        <br />
-                        <h3>Social</h3>
-                        <p><i class="icon-facebook icon"></i> <a href="https://www.facebook.com/pages/Vision-Design-graphic-ZOO/154664684553091">Find Us on FaceBook</a></p>
-                        <p class="margin-bottom"><i class="icon-twitter icon"></i> <a href="https://twitter.com/MyResponsee">Find Us on Twitter</a></p>
-                    </div>
-                    <div class="s-12 m-12 l-5">
-                        <h3>Example contact form (do not use)</h3>
-                        <form class="customform" action="">
-                            <div class="s-12"><input name="" placeholder="Your e-mail" title="Your e-mail" type="text" /></div>
-                            <div class="s-12"><input name="" placeholder="Your name" title="Your name" type="text" /></div>
-                            <div class="s-12"><textarea placeholder="Your message" name="" rows="5"></textarea></div>
-                            <div class="s-12 m-12 l-4"><button class="color-btn" type="submit">Submit Button</button></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- MAP -->
-
-        <div id="map-block">
-
-            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDySh--gidCgyIAMWh0tX7xcwij6HClbYA&q=IfakaraHealthInstitute,Ifakara&amp" width="100%" height="450" frameborder="0" style="border:0"></iframe>
-            <!--https://www.google.com/maps/embed/v1/place?key=AIzaSyDySh--gidCgyIAMWh0tX7xcwij6HClbYA&q=-8.146137, 36.682924"-->
-        </div>
-    </section>
-
-    <div class="videoPlayer">
-        <!-- Modal HTML -->
-        <div id="video1" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title">Bill Gates VS Clint Dempsey</h4>
-                    </div>
-                    <div class="modal-body">
-                        <iframe id="raceVideo" width="560" height="315" src="//www.youtube.com/embed/rD8SmacBUcU" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+					<b>- Send or Drop off Socks to Ifakara Branch</b>: Off Mlabani Passage Ifakara P.O. Box 53 Ifakara <br />
+					<b>- Send or Drop off Socks to Dar es Salaam Branch</b>: Ifakara Health Institute Plot 463, Kiko Avenue Mikocheni Dar es Salaam P.O. Box 78 373 Dar es Salaam
 
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="line">
-            <div class="s-12 l-6">
-                <p></p>
-            </div>
-            <div class="s-12 l-6">
-                <a class="right" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Ifakara Health Institute<br> Smelly Socks Project</a>
-            </div>
-        </div>
-    </footer>
+					<h3 style="color:#00283a">United States:</h3>
+				<p style="color:#00283a">Instructions coming soon!</p>
+				<h3 style="color:#00283a">Europe:</h3>
+				<p style="color:#00283a">Instructions coming soon!</p>
+				<br /> <br />
+			</div>
 
-    <script type="text/javascript" src="js/responsee.js"></script>
-    <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-            var theme_slider = $("#owl-demo");
-            $("#owl-demo").owlCarousel({
-                navigation: false,
-                slideSpeed: 300,
-                paginationSpeed: 400,
-                autoPlay: 6000,
-                addClassActive: true,
-                // transitionStyle: "fade",
-                singleItem: true
-            });
-            $("#owl-demo2").owlCarousel({
-                slideSpeed: 300,
-                autoPlay: true,
-                navigation: true,
-                navigationText: ["&#xf007", "&#xf006"],
-                pagination: false,
-                singleItem: true
-            });
+			<br /> <br /> <br /> <br />
+			<div id="moneyDonate"></div>
+			<div class="line">
+				<div class="margin">
+					<div class="s-12 m-6 l-4 margin-bottom">
+						<i class="icon-sli-phone"></i>
+						<div class="service-text">
+							<h3>Donate VIA Mobile Money</h3>
+							<p>
+								Send your donation to<br />
+								AIRTEL MONEY :- 078928XXXX <br />
+								TIGO PESA :- 065911XXXX<br />
+								M-PESA :- 075889XXXX
+							</p>
+						</div>
+					</div>
+					<div class="s-12 m-6 l-4 margin-bottom">
+						<img src="img/donate.jpg" alt="Image not avaiable" style="border-radius:5px;" />
+						<div class="text-center" style="color:#FFFFFF;border-radius:5px;"></div>
+						<!--https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/donate_step_1/-->
+					</div>
+					<div class="s-12 m-12 l-4 margin-bottom">
+						<i class="icon-random"></i>
+						<div class="service-text">
+							<h3>Donate to Project as a Whole</h3>
+							<p>Please follow this <a href="http://ihi.or.tz/support-us/">link </a>to Ifakara Health Insitiute's donation page </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- CONTACT -->
+		<div id="contact">
+			<div class="line">
+				<h2 class="section-title">Contact Us</h2>
+				<div class="margin">
+					<div class="s-12 m-12 l-3 hide-m hide-s margin-bottom right-align">
+						<img src="img/logo.png" alt="" style="border:1px solid black;" />
+					</div>
+					<div class="s-12 m-12 l-4 margin-bottom right-align">
+						<h3>Ifakara Health Institute</h3>
+						<address>
+							<p><strong>Adress:</strong> Off Mlabani Passage, PO Box 53, Ifakara</p>
+							<p><strong>Country:</strong>Tanzanaia</p>
+							<p><strong>E-mail:</strong> example@ihi.or.tz</p>
+						</address>
+						<br />
+						<h3>Social</h3>
+						<p><i class="icon-facebook icon"></i> <a href="https://www.facebook.com/pages/Vision-Design-graphic-ZOO/154664684553091">Find Us on FaceBook</a></p>
+						<p class="margin-bottom"><i class="icon-twitter icon"></i> <a href="https://twitter.com/MyResponsee">Find Us on Twitter</a></p>
+					</div>
+					<div class="s-12 m-12 l-5">
+						<h3>Example contact form (do not use)</h3>
+						<form class="customform" action="">
+							<div class="s-12"><input name="" placeholder="Your e-mail" title="Your e-mail" type="text" /></div>
+							<div class="s-12"><input name="" placeholder="Your name" title="Your name" type="text" /></div>
+							<div class="s-12"><textarea placeholder="Your message" name="" rows="5"></textarea></div>
+							<div class="s-12 m-12 l-4"><button class="color-btn" type="submit">Submit Button</button></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- MAP -->
+		<div id="map-block">
 
-            // Custom Navigation Events
-            $(".next-arrow").click(function () {
-                theme_slider.trigger('owl.next');
-            })
-            $(".prev-arrow").click(function () {
-                theme_slider.trigger('owl.prev');
-            })
-        });
-    </script>
+			<iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDySh--gidCgyIAMWh0tX7xcwij6HClbYA&q=IfakaraHealthInstitute,Ifakara&amp" width="100%" height="450" frameborder="0" style="border:0"></iframe>
+			<!--https://www.google.com/maps/embed/v1/place?key=AIzaSyDySh--gidCgyIAMWh0tX7xcwij6HClbYA&q=-8.146137, 36.682924"-->
+		</div>
+	</section>
+
+	<div class="videoPlayer">
+		<!-- Modal HTML -->
+		<!--<div id="video1" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Bill Gates VS Clint Dempsey</h4>
+					</div>
+					<div class="modal-body">
+						<iframe id="raceVideo" width="560" height="315" src="//www.youtube.com/embed/rD8SmacBUcU" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</div>-->
+	</div>
+
+
+	<!-- FOOTER -->
+	<footer>
+		<div class="line">
+			<div class="s-12 l-6">
+				<p></p>
+			</div>
+			<div class="s-12 l-6">
+				<a class="right" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Ifakara Health Institute<br> Smelly Socks Project</a>
+			</div>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="js/responsee.js"></script>
+	<script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			var theme_slider = $("#owl-demo");
+			$("#owl-demo").owlCarousel({
+				navigation: false,
+				slideSpeed: 300,
+				paginationSpeed: 400,
+				autoPlay: 6000,
+				addClassActive: true,
+				// transitionStyle: "fade",
+				singleItem: true
+			});
+			$("#owl-demo2").owlCarousel({
+				slideSpeed: 300,
+				autoPlay: true,
+				navigation: true,
+				navigationText: ["&#xf007", "&#xf006"],
+				pagination: false,
+				singleItem: true
+			});
+
+			// Custom Navigation Events
+			$(".next-arrow").click(function () {
+				theme_slider.trigger('owl.next');
+			})
+			$(".prev-arrow").click(function () {
+				theme_slider.trigger('owl.prev');
+			})
+		});
+	</script>
+
+
+	<script type="text/javascript" src="js/d3-script.js"></script>
 </body>
 </html>
