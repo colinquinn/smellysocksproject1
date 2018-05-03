@@ -9,6 +9,9 @@ var minAge = 0;
 var maxAge = 100;
 var user = {};
 var results;
+var people = [];
+var sockSearcher;
+
 function parseLine(line) {
 	return {
 		Row_Num: parseInt(line["Row_Number"]),
@@ -20,8 +23,8 @@ function parseLine(line) {
 	};
 }
 
-d3.csv("Sock_Data_LibraryMock.csv", parseLine, function (error, data) {
-
+d3.csv("Sock_Data_Library.csv", function (error, data) {
+	data.map(personObject => people.push(personObject));
 });
 
 //=======================================================================================================================
@@ -148,8 +151,6 @@ function ready(error, data, population) {
 			}
 			newCountryName.appendChild(document.createTextNode(allCountries));
 			countryName.appendChild(newCountryName);
-
-			console.log(countries);
 		});
 	worldSvg.append("path")
 		.datum(topojson.mesh(data.features, function (a, b) { return a.id !== b.id; }))
@@ -158,7 +159,7 @@ function ready(error, data, population) {
 		.attr("d", path);
 
 	handlesSlider.noUiSlider.on('change', function (values, handle) {
-		console.log("min: " + values[0] + " max: " + values[1]);
+		//console.log("min: " + values[0] + " max: " + values[1]);
 		minAge = parseInt(values[0]);
 		maxAge = parseInt(values[1]);
 		//re-run this simulation anytime this is changed
@@ -266,10 +267,12 @@ d3.selectAll("input[name='gender']").on("change", function () {
 //=======================================================================================================================
 // Button Functionality
 //=======================================================================================================================
-d3.select('#enter-information').on("click", function () {
+d3.select('#enter-information').on("click", function (d) {
+	sockSearcher = d;
 	d3.select(this).text("Edit Information");
-	d3.selectAll("#entry-information").toggle();
+	//d3.selectAll("#entry-information").toggle();
 	getUserData();
+	results = run_simulation();
 });
 d3.select('#run-simulation').on("click", function () {
 	d3.select(this).text("Run Simulation Again");
@@ -291,29 +294,51 @@ function scale_colors(gender) {
 function run_simulation() {
 	var results = [];
 	if (!jQuery.isEmptyObject(user)) {
+		user.name = user.Name;
 		results.push(user);
 	}
 	//TO-DO Swap out 100 for number of set simulations
 	for (var i = 0; i < 100; i++) {
 		//TO-DO make this correlate to slider
+		var name = people[i].name;
 		var age = generateAge(minAge, maxAge);
 		var gender;
 		if (typeof globalGender == "undefined" || globalGender == "B") {
 			gender = generateGender();
 		}
 		else { gender = globalGender; }
+
 		if (countries.length == 0) {
 			var country = generateCountry(globalData);
 		}
 		else {
 			var country = generateCountry2(countries);
 		}
-		var participant = { age: age, gender: gender, country: country };
+		var participant = { name: name, age: age, gender: gender, country: country };
 		var smelliness = getSmelliness(participant);
 		participant.smelliness = smelliness;
 		results.push(participant);
 	}
-
+	//for (var i = 0; i < 100; i++) {
+	//	//TO-DO make this correlate to slider
+	//	var name = "Colin Quinn";
+	//	var age = generateAge(minAge, maxAge);
+	//	var gender;
+	//	if (typeof globalGender == "undefined" || globalGender == "B") {
+	//		gender = generateGender();
+	//	}
+	//	else { gender = globalGender; }
+	//	if (countries.length == 0) {
+	//		var country = generateCountry(globalData);
+	//	}
+	//	else {
+	//		var country = generateCountry2(countries);
+	//	}
+	//	var participant = { name: name, age: age, gender: gender, country: country };
+	//	var smelliness = getSmelliness(participant);
+	//	participant.smelliness = smelliness;
+	//	results.push(participant);
+	//}
 	var smellinessByGender = d3.nest()
 		.key(function (d) { return d.gender; })
 		.rollup(function (v) { return d3.mean(v, function (d) { return d.smelliness; }); })
@@ -370,7 +395,7 @@ function run_simulation() {
 			div.transition()
 				.duration(200)
 				.style("opacity", .9);
-			div.html("Age: " + d.age + "<br/>" + "Smelliness: " + d.smelliness.toFixed(2) + "<br/>" + "Country of Origin: " + d.country)
+			div.html("Name: " + d.name + "<br/>Age: " + d.age + "<br/>" + "Smelliness: " + d.smelliness.toFixed(2) + "<br/>" + "Country of Origin: " + d.country)
 				.style("left", d3.event.pageX + "px")
 				.style("top", (d3.event.pageY) + "px");
 		})
@@ -398,11 +423,11 @@ function run_simulation() {
 			.text("You won " + smellier + "% of the races");
 		svg2.selectAll("line").remove();
 		svg2.append("line")
-				.attr("x1", 0)
-				.attr("y1", yScale(user.smelliness))
-				.attr("x2", xScale(width))
-				.attr("y2", yScale(user.smelliness))
-				.attr("stroke", "red");
+			.attr("x1", 0)
+			.attr("y1", yScale(user.smelliness))
+			.attr("x2", xScale(width))
+			.attr("y2", yScale(user.smelliness))
+			.attr("stroke", "red");
 	}
 
 	return results;
@@ -441,6 +466,7 @@ function generateCountry2(countries) {
 }
 //TO-DO Evaluate how we want simulate smelliness
 function getSmelliness(participant) {
+	//console.log(participant);
 	var mean;
 	if (participant.gender == 'F') {
 		mean = .58;
@@ -465,5 +491,4 @@ function getUserData() {
 	user.Name = d3.select("input[name='username']").property("value");
 	user.gender = d3.select('input[name="usergender"]:checked').node().value;
 	user.smelliness = getSmelliness(user);
-
 }

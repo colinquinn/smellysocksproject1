@@ -1,4 +1,4 @@
-Row_Number,Time_Stamp,SockOwner1_Name,SockOwner1_Country,SockOwner1_Gender,SockOwner1_Age,SockOwner1_Smelliness,SockOwner2_Name,SockOwner2_Country,SockOwner2_Gender,SockOwner2_Age,SockOwner2_Smelliness
+Row_Number,Time_Stamp,name,country,gender,age,smelliness,SockOwner2_Name,SockOwner2_Country,SockOwner2_Gender,SockOwner2_Age,SockOwner2_Smelliness
 1,12:59:14,Riccardo Mussotti,Laos,F,7,0.85,Irvin Murtimer,Israel,M,17,0.86
 2,13:04:59,Jud Acock,China,M,8,0.26,Abey Rosita,Portugal,M,14,0.1
 3,1:18:37,Udale Christene,Bulgaria,M,9,0.91,Tann Olney,Russia,M,9,0.34
