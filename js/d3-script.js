@@ -39,7 +39,7 @@ var tip = d3.tip()
 	.attr('class', 'd3-tip')
 	.offset([-10, 0])
 	.html(function (d) {
-		return "<strong>Country: </strong><span class='details'>" + d.properties.name + "<br></span>" + "<strong>Population: </strong><span class='details'>" + format(d.population) + "</span>";
+		return "<strong>Country: </strong><span class='details'>" + d.properties.name + "<br></span>" + "<strong>Participants: </strong><span class='details'>" + format(Math.floor(d.population / 1000000)) + "</span>";
 	})
 
 var margin = { top: 0, right: 0, bottom: 0, left: 0 },
@@ -151,6 +151,7 @@ function ready(error, data, population) {
 			}
 			newCountryName.appendChild(document.createTextNode(allCountries));
 			countryName.appendChild(newCountryName);
+			results = run_simulation()
 		});
 	worldSvg.append("path")
 		.datum(topojson.mesh(data.features, function (a, b) { return a.id !== b.id; }))
@@ -188,25 +189,6 @@ noUiSlider.create(handlesSlider, {
 		density: 4
 	}
 });
-
-//Might have to change to using something like this:
-//$(function () {
-//	$("#height-range-slider").slider({
-//		range: true,
-//		min: 0,
-//		max: 100,
-//		values: heightRange,
-//		slide: function (event, ui) {
-//			$("#height").val(printNumAsFeetInches(ui.values[0]) + " - " + printNumAsFeetInches(ui.values[1]));
-//			heightRange = [ui.values[0], ui.values[1]];
-//			update();
-//		},
-//		stop: function (event, ui) {
-
-//		}
-//	});
-//	$("#height").val(printNumAsFeetInches(heightExtent[0]) + " - " + printNumAsFeetInches(heightExtent[1]));
-//});
 
 //=======================================================================================================================
 //Smelly Socks Graph
@@ -269,7 +251,7 @@ d3.selectAll("input[name='gender']").on("change", function () {
 //=======================================================================================================================
 d3.select('#enter-information').on("click", function (d) {
 	sockSearcher = d;
-	d3.select(this).text("Edit Information");
+	d3.select(this).text("Find a Different Sock!");
 	//d3.selectAll("#entry-information").toggle();
 	getUserData();
 	results = run_simulation();
