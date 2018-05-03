@@ -1,5 +1,6 @@
 svg {
 	border: solid #00283a 5px;
+	background-color: #e6e6e6;
 	border-radius: 25px;
 	display: block;
 	margin: auto;
@@ -7,13 +8,35 @@ svg {
 	margin-top: 20px;
 }
 
-boxed {
-	border: solid #00283a 5px;
+.boxed {
+	border: solid #00283a 2px;
 	border-radius: 25px;
 	display: block;
 	margin: auto;
-	margin-bottom: 20px;
+	margin-bottom: 20%;
 	margin-top: 20px;
+}
+
+.numberCircle {
+	border-radius: 50%;
+	behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+	width: 36px;
+	height: 36px;
+	padding: 4px;
+	background: #fff;
+	border: 2px solid #00283a;
+	color: #00283a;
+	text-align: center;
+	align-content: center;
+	font: 24px Arial, sans-serif;
+	display: inline-block;
+}
+
+.numtext {
+	color: #00283a;
+	text-align: center;
+	font: 24px Arial, sans-serif;
+	display: inline-block;
 }
 
 /*World map Stuff:*/
@@ -126,4 +149,34 @@ form {
 /*Slider CSS*/
 .slider {
 	color: blue;
+}
+/*SVG CSS*/
+.svg-container {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	padding-bottom 50%; /* aspect ratio */
+	vertical-align: top;
+	overflow: hidden;
+}
+
+.svg-content-responsive {
+	display: inline-block;
+	position: absolute;
+	top: 5px;
+	left: 0;
+}
+
+div.tooltip {
+	position: absolute;
+	text-align: center;
+	width: inherit;
+	height: inherit;
+	padding: 12px;
+	font: 12px sans-serif;
+	color: white;
+	background: #00283a;
+	border: 0px;
+	border-radius: 8px;
+	pointer-events: none;
 }
