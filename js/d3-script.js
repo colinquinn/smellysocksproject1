@@ -14,14 +14,19 @@ var sockSearcher;
 
 function parseLine(line) {
 	return {
-		Name: line['name'],
-		age: parseInt(line["age"]),
-		gender: line['gender'],
-		country: line["country"],
-		smelliness: line["smellliness"],
-		time: line["race_id"]
+		Row_Num: parseInt(line["Row_Number"]),
+		Time_Stamp: line["Time_Stamp"],
+		SockOwner1_Name: line["SockOwner1_Name"],
+		SockOwner1_Country: line["SockOwner1_Country"],
+		SockOwner1_Gender: line['SockOwner1_Gender'],
+		SockOwner1_Age: parseInt(line["SockOwner1_Age"])
 	};
 }
+
+d3.csv("Sock_Data_Library.csv", function (error, data) {
+	data.map(personObject => people.push(personObject));
+});
+
 
 d3.csv("smelly_socks_db.csv", function (error, data) {
 	data.forEach(function (d) {

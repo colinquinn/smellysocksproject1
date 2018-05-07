@@ -69,4 +69,4 @@ while 1:
         sys.exit()
 
     print 'Success.'
-    time.sleep(120)
+    time.sleep(20)
