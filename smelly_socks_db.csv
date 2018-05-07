@@ -1,11 +1,9 @@
 name,age,gender,country,smelliness,race_id
-sockOwner1Name,no_age_entered,no_gender_entered,USA,4.0,06-05-2018_22:57
-sockOwner2Name,no_age_entered,no_gender_entered,FRANCE,4.0,06-05-2018_22:57
-a,no_age_entered,no_gender_entered,USA,4.0,06-05-2018_23:05
-s,no_age_entered,no_gender_entered,France,64.0,06-05-2018_23:05
-a,2,F,a,40.0,06-05-2018_23:25
-s,2,M,d,36.0,06-05-2018_23:25
-Jake Miller,22,M,USA,32.0,07-05-2018_11:35
+sockOwner1Name,no_age_entered,no_gender_entered,Denmark,4.0,06-05-2018_22:57
+sockOwner2Name,no_age_entered,no_gender_entered,Russia,4.0,06-05-2018_22:57
+Jake Miller,22,M,Poland,32.0,07-05-2018_11:35
 Cole Blazer,21,M,Germany,32.0,07-05-2018_11:35
 Doug Whitney,25,F,Brazil,20.0,07-05-2018_11:39
-Damen,27,M,United Kingdom,12.0,07-05-2018_11:39
+Damen Mckay,27,M,United Kingdom,12.0,07-05-2018_11:39
+Bret Van Rossum,19,F,China,20.0,07-05-2018_11:39
+Lauren Mau,27,M,Ugana,12.0,07-05-2018_11:39
