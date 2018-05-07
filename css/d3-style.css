@@ -1,3 +1,14 @@
+			table {
+				border-collapse: collapse;
+				border: 2px black solid;
+				font: 12px sans-serif;
+			}
+
+			td {
+				border: 1px black solid;
+				padding: 5px;
+			}
+
 svg {
 	border: solid #00283a 5px;
 	background-color: #e6e6e6;

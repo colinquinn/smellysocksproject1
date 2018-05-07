@@ -14,17 +14,32 @@ var sockSearcher;
 
 function parseLine(line) {
 	return {
-		Row_Num: parseInt(line["Row_Number"]),
-		Time_Stamp: line["Time_Stamp"],
-		SockOwner1_Name: line["SockOwner1_Name"],
-		SockOwner1_Country: line["SockOwner1_Country"],
-		SockOwner1_Gender: line['SockOwner1_Gender'],
-		SockOwner1_Age: parseInt(line["SockOwner1_Age"])
+		Name: line['name'],
+		age: parseInt(line["age"]),
+		gender: line['gender'],
+		country: line["country"],
+		smelliness: line["smellliness"],
+		time: line["race_id"]
 	};
 }
 
-d3.csv("Sock_Data_Library.csv", function (error, data) {
-	data.map(personObject => people.push(personObject));
+d3.csv("smelly_socks_db.csv", parseLine, function (error, data) {
+	//data.map(personObject => people.push(personObject));
+	console.log(data);
+	//parsedCSV = data;
+  var parsedCSV = d3.csvParse(data);
+	var container = d3.select("#csvgrab")
+		.append("table")
+		.selectAll("tr")
+			.data(data)
+			.enter()
+			.append("tr")
+			.selectAll("tr")
+				.data(function (d) { return d.name }).enter()
+		//.data(function (d) { return {name:d.name,age:d.age,gender:d.gender,country:d.country,smelliness:d.smelliness,race_id:d.race_id} }).enter()
+				.append("td")
+				.text(function (d) { return d; })
+
 });
 
 //=======================================================================================================================
